@@ -21,11 +21,12 @@ const {
 <div
     class={`
   group relative overflow-hidden rounded-2xl
-  bg-white/60 backdrop-blur-sm border border-white/20
-  hover:bg-white/80 hover:border-white/40
+  bg-white border border-gray-200/60
+  shadow-sm hover:shadow-lg
+  hover:border-gray-300/60
   transition-all duration-500 ease-out
   hover:scale-105 hover:-translate-y-1
-  hover:shadow-2xl hover:shadow-primary-500/10
+  hover:shadow-primary-500/10
   ${className}
 `}
 >
@@ -92,7 +93,7 @@ const {
 
     <!-- Decorative gradient overlay -->
     <div
-        class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+        class="absolute inset-0 bg-gradient-to-br from-primary-500/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
     >
     </div>
 </div>
