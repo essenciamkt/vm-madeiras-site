@@ -1,0 +1,299 @@
+---
+export interface Props {
+    id?: string;
+}
+
+const { id = "quem-somos" } = Astro.props;
+---
+
+<section id={id} class="py-24 bg-white relative overflow-hidden">
+    <!-- Background elements -->
+    <div
+        class="absolute inset-0 bg-gradient-to-br from-amber-50/50 to-orange-50/50"
+    >
+    </div>
+    <div
+        class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-amber-100/30 to-transparent"
+    >
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Content -->
+            <div class="space-y-8">
+                <div>
+                    <span
+                        class="inline-block px-4 py-2 bg-amber-100 text-amber-800 text-sm font-semibold rounded-full mb-4"
+                    >
+                        Nossa História
+                    </span>
+                    <h2
+                        class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+                    >
+                        Quem <span class="text-amber-600">Somos</span>
+                    </h2>
+                    <div
+                        class="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mt-4"
+                    >
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Nossa história começa aproximadamente há <strong
+                            class="text-amber-600">50 anos</strong
+                        >. Um jovem imigrante português visita Teresópolis,
+                        encanta-se e resolve aqui se estabelecer.
+                    </p>
+
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Hoje, após anos de dedicação e empenho, a <strong
+                            >VM Madeiras & Cia</strong
+                        > orgulha-se de fazer parte do crescimento de Teresópolis,
+                        que é considerada uma das cidades mais belas do Brasil.
+                    </p>
+
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Sem perder de vista suas tradições e convicções, entre
+                        as quais se destacam a
+                        <span class="text-amber-600 font-semibold"
+                            >honestidade</span
+                        >, a
+                        <span class="text-amber-600 font-semibold"
+                            >eficiência</span
+                        > e o
+                        <span class="text-amber-600 font-semibold"
+                            >respeito ao cliente</span
+                        >, a VM Madeiras & Cia também pensa no futuro: acredita
+                        que o desenvolvimento sustentável e o cuidado com a
+                        natureza são fundamentais.
+                    </p>
+                </div>
+
+                <!-- Key Features -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="flex items-center space-x-3">
+                        <div
+                            class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center"
+                        >
+                            <svg
+                                class="w-5 h-5 text-green-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">
+                                Licença IBAMA
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                Extração de manejo certificada
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div
+                            class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center"
+                        >
+                            <svg
+                                class="w-5 h-5 text-blue-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">
+                                DOF Emitido
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                Documento de origem florestal
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div
+                            class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center"
+                        >
+                            <svg
+                                class="w-5 h-5 text-amber-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">
+                                Frota Própria
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                Entrega rápida e garantida
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div
+                            class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center"
+                        >
+                            <svg
+                                class="w-5 h-5 text-green-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">
+                                Sustentável
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                Linha ecológica de eucalipto
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-amber-50 rounded-2xl p-6 border border-amber-200"
+                >
+                    <p class="text-amber-800 font-medium text-center">
+                        <strong>Qualidade:</strong> esse é o nosso maior compromisso.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Image placeholder -->
+            <div class="relative">
+                <div
+                    class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl"
+                >
+                    <img
+                        src="https://placehold.co/600x750?text=VM+Madeiras+Teresópolis"
+                        alt="VM Madeiras & Cia em Teresópolis"
+                        class="w-full h-full object-cover"
+                        loading="lazy"
+                    />
+                </div>
+
+                <!-- Floating card -->
+                <div
+                    class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-gray-100"
+                >
+                    <div class="flex items-center space-x-4">
+                        <div
+                            class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center"
+                        >
+                            <svg
+                                class="w-6 h-6 text-amber-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                ></path>
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">
+                                Teresópolis, RJ
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                Uma das cidades mais belas do Brasil
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teresópolis Section -->
+        <div class="mt-24">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                    Teresópolis
+                </h3>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Localizada a 90m do nível do mar, próximo a grandes centros
+                    urbanos, Teresópolis destaca-se no cenário brasileiro por
+                    suas belezas naturais, clima aconchegante e população
+                    hospitaleira.
+                </p>
+            </div>
+
+            <div
+                class="bg-gradient-to-r from-amber-500 to-orange-500 rounded-3xl p-8 text-center text-white"
+            >
+                <h4 class="text-2xl font-bold mb-4">Venha nos visitar!</h4>
+                <p class="text-lg opacity-90 mb-6">
+                    É a cidade ideal para quem procura sossego e qualidade de
+                    vida.
+                </p>
+                <a
+                    href="#contato"
+                    class="inline-flex items-center px-8 py-4 bg-white text-amber-600 font-semibold rounded-xl hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                >
+                    Como Chegar
+                    <svg
+                        class="ml-2 w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

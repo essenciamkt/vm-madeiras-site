@@ -1,15 +1,78 @@
 ---
 import "../styles/global.css";
+
+export interface Props {
+	title?: string;
+	description?: string;
+	keywords?: string;
+}
+
+const {
+	title = "VM Madeiras & Cia - Madeiras de Qualidade em Teresópolis | 50 Anos de Tradição",
+	description = "VM Madeiras & Cia: 50 anos fornecendo madeiras de qualidade em Teresópolis. Esquadrias, madeira para telhado, decks, assoalhos e linha ecológica. Licença IBAMA e entrega com frota própria.",
+	keywords = "madeira teresópolis, esquadrias, madeira telhado, decks, assoalhos, madeira ecológica, eucalipto, IBAMA, DOF, construção civil, marcenaria",
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content="VM Madeiras & Cia" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:locale" content="pt_BR" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+
+		<!-- Preconnect to external domains -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				"name": "VM Madeiras & Cia",
+				"description": "Venda de madeiras de extração de manejo com licença IBAMA",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "Av. Alberto Torres, 500",
+					"addressLocality": "Teresópolis",
+					"addressRegion": "RJ",
+					"addressCountry": "BR"
+				},
+				"telephone": ["(21) 2642-4060", "(21) 2642-1059"],
+				"openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-12:00",
+				"foundingDate": "1974",
+				"servedCuisine": "Madeiras, Esquadrias, Ferramentas, Construção Civil"
+			}
+		</script>
+
+		<!-- Glide.js CSS -->
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
@@ -18,12 +81,53 @@ import "../styles/global.css";
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
 		/>
-		<!-- Add the Glide.js script from CDN -->
+
+		<!-- Force navbar visibility script -->
+		<script>
+			// Critical navbar fix - run immediately
+			function forceNavbarVisibility() {
+				const nav =
+					document.querySelector("#main-navigation") ||
+					document.querySelector("nav");
+				if (nav && nav instanceof HTMLElement) {
+					nav.style.cssText = `
+						display: block !important;
+						visibility: visible !important;
+						position: fixed !important;
+						top: 0 !important;
+						left: 0 !important;
+						right: 0 !important;
+						width: 100% !important;
+						z-index: 99999 !important;
+						opacity: 1 !important;
+						background: rgba(255, 255, 255, 0.95) !important;
+						backdrop-filter: blur(16px) !important;
+						-webkit-backdrop-filter: blur(16px) !important;
+					`;
+					console.log("🚀 Navbar forced visible via head script");
+				}
+			}
+
+			// Run as soon as possible
+			if (document.readyState === "loading") {
+				document.addEventListener(
+					"DOMContentLoaded",
+					forceNavbarVisibility,
+				);
+			} else {
+				forceNavbarVisibility();
+			}
+
+			// Also run after a short delay as backup
+			setTimeout(forceNavbarVisibility, 100);
+		</script>
+
+		<!-- Glide.js Script -->
 		<script
 			src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"
 		></script>
 	</head>
-	<body>
+	<body class="bg-[#ece8dc] font-sans antialiased">
 		<slot />
 
 		<script is:inline>

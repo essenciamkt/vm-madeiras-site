@@ -1,0 +1,36 @@
+---
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<!-- Main content -->
+	<div class="container">
+		<!-- Make sure this Glide structure exists in your HTML -->
+		<div class="glide">
+			<div class="glide__track" data-glide-el="track">
+				<ul class="glide__slides">
+					<li class="glide__slide">Slide 1</li>
+					<li class="glide__slide">Slide 2</li>
+					<li class="glide__slide">Slide 3</li>
+					<li class="glide__slide">Slide 4</li>
+					<li class="glide__slide">Slide 5</li>
+				</ul>
+			</div>
+			<!-- Optional controls -->
+			<div class="glide__arrows" data-glide-el="controls">
+				<button
+					class="glide__arrow glide__arrow--left"
+					data-glide-dir="<">prev</button
+				>
+				<button
+					class="glide__arrow glide__arrow--right"
+					data-glide-dir=">">next</button
+				>
+			</div>
+		</div>
+	</div>
+</Layout>

@@ -1,0 +1,65 @@
+---
+export interface Props {
+    text: string;
+    href?: string;
+    onClick?: string;
+    type?: "button" | "submit" | "reset";
+    size?: "sm" | "md" | "lg";
+    variant?: "primary" | "secondary" | "outline";
+    class?: string;
+}
+
+const {
+    text,
+    href,
+    onClick,
+    type = "button",
+    size = "md",
+    variant = "primary",
+    class: className = "",
+} = Astro.props;
+
+const sizeClasses = {
+    sm: "px-4 py-2 text-sm",
+    md: "px-6 py-3 text-base",
+    lg: "px-8 py-4 text-lg",
+};
+
+const variantClasses = {
+    primary:
+        "bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white shadow-lg hover:shadow-xl",
+    secondary:
+        "bg-white/90 backdrop-blur-sm border border-amber-200/50 text-amber-800 hover:bg-amber-50/90 hover:border-amber-300/50",
+    outline:
+        "border-2 border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white",
+};
+
+const baseClasses = `
+  inline-flex items-center justify-center
+  font-semibold rounded-lg
+  transition-all duration-300 ease-in-out
+  transform hover:scale-105 hover:-translate-y-0.5
+  focus:outline-none focus:ring-4 focus:ring-amber-500/50
+  active:scale-95
+  ${sizeClasses[size]}
+  ${variantClasses[variant]}
+  ${className}
+`;
+---
+
+{
+    href ? (
+        <a href={href} class={baseClasses} role="button" aria-label={text}>
+            {text}
+        </a>
+    ) : (
+        <button
+            type={type}
+            class={baseClasses}
+            onclick={onClick}
+            aria-label={text}
+        >
+            {text}
+        </button>
+    )
+}

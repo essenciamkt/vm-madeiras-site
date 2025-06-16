@@ -1,0 +1,408 @@
+---
+export interface Props {
+    id?: string;
+}
+
+const { id = "contato" } = Astro.props;
+---
+
+<section
+    id={id}
+    class="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden"
+>
+    <!-- Background decoration -->
+    <div class="absolute inset-0">
+        <div
+            class="absolute top-1/4 left-1/4 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl"
+        >
+        </div>
+        <div
+            class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
+        >
+        </div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <span
+                class="inline-block px-4 py-2 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-4"
+            >
+                Entre em Contato
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Fale <span class="text-amber-400">Conosco</span>
+            </h2>
+            <div
+                class="w-16 h-1 bg-gradient-to-r from-amber-400 to-orange-400 mx-auto mb-6"
+            >
+            </div>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Nossa equipe está preparada para esclarecer suas dúvidas e
+                garantir um ótimo atendimento. Entre em contato conosco para
+                receber seu orçamento sem compromisso.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Contact Information -->
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">
+                        Informações de Contato
+                    </h3>
+
+                    <!-- Address -->
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center flex-shrink-0"
+                        >
+                            <svg
+                                class="w-6 h-6 text-amber-400"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                ></path>
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-1">Endereço</h4>
+                            <p class="text-gray-300">
+                                Av. Alberto Torres, 500 - Alto
+                            </p>
+                            <p class="text-gray-300">Teresópolis - RJ</p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0"
+                        >
+                            <svg
+                                class="w-6 h-6 text-green-400"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-1">
+                                Telefones
+                            </h4>
+                            <p class="text-gray-300">(21) 2642-4060</p>
+                            <p class="text-gray-300">(21) 2642-1059</p>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="flex items-start space-x-4 mb-8">
+                        <div
+                            class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0"
+                        >
+                            <svg
+                                class="w-6 h-6 text-blue-400"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-1">
+                                Horário de Funcionamento
+                            </h4>
+                            <p class="text-gray-300">
+                                Segunda a Sexta: 8h às 18h
+                            </p>
+                            <p class="text-gray-300">Sábado: 8h às 12h</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Placeholder -->
+                <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+                    <h4 class="font-semibold text-lg mb-4">Como Chegar</h4>
+                    <div
+                        class="aspect-video bg-gray-700 rounded-xl flex items-center justify-center"
+                    >
+                        <div class="text-center">
+                            <svg
+                                class="w-12 h-12 text-gray-500 mx-auto mb-3"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7"
+                                ></path>
+                            </svg>
+                            <p class="text-gray-400">Mapa Interativo</p>
+                            <p class="text-sm text-gray-500">
+                                Clique para abrir no Google Maps
+                            </p>
+                        </div>
+                    </div>
+                    <a
+                        href="https://maps.google.com/?q=Av.+Alberto+Torres,+500+-+Alto+-+Teresópolis+-+RJ"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center mt-4 px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors duration-300"
+                    >
+                        <svg
+                            class="w-4 h-4 mr-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            ></path>
+                        </svg>
+                        Abrir no Google Maps
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div
+                class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20"
+            >
+                <h3 class="text-2xl font-bold mb-8">Solicite seu Orçamento</h3>
+
+                <form class="space-y-6" id="contact-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label
+                                for="nome"
+                                class="block text-sm font-semibold mb-2"
+                                >Nome *</label
+                            >
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300"
+                                placeholder="Seu nome completo"
+                            />
+                        </div>
+                        <div>
+                            <label
+                                for="telefone"
+                                class="block text-sm font-semibold mb-2"
+                                >Telefone *</label
+                            >
+                            <input
+                                type="tel"
+                                id="telefone"
+                                name="telefone"
+                                required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300"
+                                placeholder="(21) 99999-9999"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label
+                            for="email"
+                            class="block text-sm font-semibold mb-2"
+                            >E-mail</label
+                        >
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300"
+                            placeholder="seu@email.com"
+                        />
+                    </div>
+
+                    <div>
+                        <label
+                            for="produto"
+                            class="block text-sm font-semibold mb-2"
+                            >Produto de Interesse</label
+                        >
+                        <select
+                            id="produto"
+                            name="produto"
+                            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300"
+                        >
+                            <option value="" class="text-gray-900"
+                                >Selecione um produto</option
+                            >
+                            <option value="portas" class="text-gray-900"
+                                >Portas</option
+                            >
+                            <option
+                                value="madeira-telhado"
+                                class="text-gray-900">Madeira de Telhado</option
+                            >
+                            <option
+                                value="madeira-plastica"
+                                class="text-gray-900">Madeira Plástica</option
+                            >
+                            <option
+                                value="decks-assoalhos"
+                                class="text-gray-900">Decks e Assoalhos</option
+                            >
+                            <option value="ferragens" class="text-gray-900"
+                                >Ferragens</option
+                            >
+                            <option value="esquadrias" class="text-gray-900"
+                                >Esquadrias</option
+                            >
+                            <option value="maquinas" class="text-gray-900"
+                                >Máquinas</option
+                            >
+                            <option value="ferramentas" class="text-gray-900"
+                                >Ferramentas</option
+                            >
+                            <option value="outros" class="text-gray-900"
+                                >Outros</option
+                            >
+                        </select>
+                    </div>
+
+                    <div>
+                        <label
+                            for="mensagem"
+                            class="block text-sm font-semibold mb-2"
+                            >Mensagem *</label
+                        >
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            rows="5"
+                            required
+                            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all duration-300 resize-none"
+                            placeholder="Descreva seu projeto e necessidades..."
+                        ></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-xl shadow-lg hover:from-amber-600 hover:to-amber-700 transform hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-gray-900"
+                    >
+                        Enviar Solicitação
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+                <div
+                    class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mx-auto mb-4"
+                >
+                    <svg
+                        class="w-6 h-6 text-green-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path>
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-lg mb-2">50 Anos de Tradição</h4>
+                <p class="text-gray-400 text-sm">
+                    Meio século servindo Teresópolis com qualidade
+                </p>
+            </div>
+
+            <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+                <div
+                    class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4"
+                >
+                    <svg
+                        class="w-6 h-6 text-blue-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        ></path>
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-lg mb-2">Certificação IBAMA</h4>
+                <p class="text-gray-400 text-sm">
+                    Produtos com licença ambiental e DOF
+                </p>
+            </div>
+
+            <div class="bg-white/5 rounded-2xl p-6 border border-white/10">
+                <div
+                    class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mx-auto mb-4"
+                >
+                    <svg
+                        class="w-6 h-6 text-amber-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                        ></path>
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-lg mb-2">Entrega Própria</h4>
+                <p class="text-gray-400 text-sm">
+                    Frota própria para entrega rápida e segura
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

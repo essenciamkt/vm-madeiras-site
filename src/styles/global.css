@@ -1,11 +1,445 @@
 @import "tailwindcss";
 
+:root {
+  /* Brand Primary Color - Vermelho Terroso */
+  --color-primary-50: #fdf2f2;
+  --color-primary-100: #fbe8e8;
+  --color-primary-200: #f6d5d5;
+  --color-primary-300: #eeb3b3;
+  --color-primary-400: #e28585;
+  --color-primary-500: #d35d5d;
+  --color-primary-600: #a93a33; /* Cor principal */
+  --color-primary-700: #8f2f2a;
+  --color-primary-800: #762724;
+  --color-primary-900: #632523;
+
+  /* Complementary Colors - Tons de Madeira */
+  --color-wood-50: #faf8f3;
+  --color-wood-100: #f4f1ea;
+  --color-wood-200: #e8e2d4;
+  --color-wood-300: #d4c7b0;
+  --color-wood-400: #b8a082;
+  --color-wood-500: #9d8460;
+  --color-wood-600: #8b7355;
+  --color-wood-700: #735f47;
+  --color-wood-800: #5e4e3d;
+  --color-wood-900: #4c4032;
+
+  /* Neutral Colors - Cinzas Quentes */
+  --color-neutral-50: #fafaf9;
+  --color-neutral-100: #f5f5f4;
+  --color-neutral-200: #e7e5e4;
+  --color-neutral-300: #d6d3d1;
+  --color-neutral-400: #a8a29e;
+  --color-neutral-500: #78716c;
+  --color-neutral-600: #57534e;
+  --color-neutral-700: #44403c;
+  --color-neutral-800: #292524;
+  --color-neutral-900: #1c1917;
+
+  /* Accent Colors - Verde Natural */
+  --color-accent-50: #f0fdf4;
+  --color-accent-100: #dcfce7;
+  --color-accent-200: #bbf7d0;
+  --color-accent-300: #86efac;
+  --color-accent-400: #4ade80;
+  --color-accent-500: #22c55e;
+  --color-accent-600: #16a34a;
+  --color-accent-700: #15803d;
+  --color-accent-800: #166534;
+  --color-accent-900: #14532d;
+
+  /* Status Colors */
+  --color-success-50: #f0fdf4;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  
+  --color-warning-50: #fffbeb;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  
+  --color-error-50: #fef2f2;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+
+  /* Brand Semantic Colors */
+  --color-primary: var(--color-primary-600);
+  --color-secondary: var(--color-wood-100);
+  --color-accent: var(--color-accent-600);
+  
+  /* Background Colors */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: var(--color-wood-50);
+  --color-bg-tertiary: var(--color-neutral-50);
+  
+  /* Text Colors */
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-700);
+  --color-text-muted: var(--color-neutral-500);
+  
+  /* Border Colors */
+  --color-border-light: var(--color-neutral-200);
+  --color-border-medium: var(--color-neutral-300);
+  --color-border-dark: var(--color-neutral-400);
+
+  /* Legacy color mappings for backward compatibility */
+  --color-gray-50: var(--color-neutral-50);
+  --color-gray-100: var(--color-neutral-100);
+  --color-gray-200: var(--color-neutral-200);
+  --color-gray-300: var(--color-neutral-300);
+  --color-gray-400: var(--color-neutral-400);
+  --color-gray-500: var(--color-neutral-500);
+  --color-gray-600: var(--color-neutral-600);
+  --color-gray-700: var(--color-neutral-700);
+  --color-gray-800: var(--color-neutral-800);
+  --color-gray-900: var(--color-neutral-900);
+  
+  --color-wood-light: var(--color-wood-100);
+  --color-wood-medium: var(--color-wood-400);
+  --color-wood-dark: var(--color-wood-700);
+}
+
+/* Global scroll margin for all sections to account for fixed navbar */
+section[id] {
+    scroll-margin-top: 6rem; /* 96px - slightly more than navbar height */
+}
+
+/* Ensure smooth scrolling for all anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Additional padding for mobile devices */
+@media (max-width: 768px) {
+    section[id] {
+        scroll-margin-top: 5.5rem; /* 88px for mobile */
+    }
+}
+
+/* Glide carousel styles */
 .glide__slide {
-	height: 200px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #f5f5f5;
-	border-radius: 8px;
-	font-size: 24px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-wood-light);
+  border: 1px solid var(--color-wood-200);
+  border-radius: 12px;
+  font-size: 24px;
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+}
+
+.glide__slide:hover {
+  background-color: var(--color-wood-100);
+  border-color: var(--color-primary-300);
+  transform: scale(1.02);
+}
+
+/* Glassmorphism utilities */
+.glass {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom gradient meshes */
+.gradient-mesh-1 {
+  background: radial-gradient(circle at 20% 80%, rgba(169, 58, 51, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(141, 196, 160, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(212, 199, 176, 0.2) 0%, transparent 50%);
+}
+
+.gradient-mesh-2 {
+  background: radial-gradient(circle at 60% 10%, rgba(169, 58, 51, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 20% 70%, rgba(156, 132, 96, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 90% 90%, rgba(250, 248, 243, 0.6) 0%, transparent 50%);
+}
+
+.gradient-mesh-wood {
+  background: radial-gradient(circle at 30% 20%, rgba(115, 95, 71, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(169, 58, 51, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(244, 241, 234, 0.4) 0%, transparent 50%);
+}
+
+/* Brand gradient utilities */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-700));
+}
+
+.gradient-primary-soft {
+  background: linear-gradient(135deg, var(--color-primary-50), var(--color-primary-100));
+}
+
+.gradient-wood {
+  background: linear-gradient(135deg, var(--color-wood-200), var(--color-wood-400));
+}
+
+.gradient-wood-dark {
+  background: linear-gradient(135deg, var(--color-wood-500), var(--color-wood-700));
+}
+
+.gradient-nature {
+  background: linear-gradient(135deg, var(--color-wood-300), var(--color-accent-400));
+}
+
+/* Shadow utilities with brand colors */
+.shadow-primary {
+  box-shadow: 0 4px 12px rgba(169, 58, 51, 0.15);
+}
+
+.shadow-primary-lg {
+  box-shadow: 0 8px 24px rgba(169, 58, 51, 0.2);
+}
+
+.shadow-wood {
+  box-shadow: 0 4px 12px rgba(156, 132, 96, 0.15);
+}
+
+.shadow-accent {
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+}
+
+/* Brand hover effects */
+.hover-primary {
+  transition: all 0.3s ease;
+}
+
+.hover-primary:hover {
+  color: var(--color-primary-600);
+  transform: translateY(-2px);
+}
+
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Card styles with new theme */
+.card-primary {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-primary:hover {
+  border-color: var(--color-primary-200);
+  box-shadow: 0 8px 25px rgba(169, 58, 51, 0.08);
+  transform: translateY(-2px);
+}
+
+.card-wood {
+  background: var(--color-wood-50);
+  border: 1px solid var(--color-wood-200);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-wood:hover {
+  border-color: var(--color-wood-300);
+  box-shadow: 0 8px 25px rgba(156, 132, 96, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Button styles with new theme */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(169, 58, 51, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-primary-700), var(--color-primary-800));
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(169, 58, 51, 0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-wood-100);
+  color: var(--color-wood-800);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  border: 1px solid var(--color-wood-300);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--color-wood-200);
+  border-color: var(--color-wood-400);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(156, 132, 96, 0.2);
+}
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-accent-500), var(--color-accent-600));
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, var(--color-accent-600), var(--color-accent-700));
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+}
+
+/* Text gradients */
+.text-gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-800));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-wood {
+  background: linear-gradient(135deg, var(--color-wood-600), var(--color-wood-800));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Theme-specific animations */
+@keyframes pulseWarm {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(169, 58, 51, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(169, 58, 51, 0);
+  }
+}
+
+.animate-pulse-warm {
+  animation: pulseWarm 2s infinite;
+}
+
+/* Updated utility classes with new color system */
+.text-gray-700 {
+  color: var(--color-neutral-700);
+}
+
+.text-gray-900 {
+  color: var(--color-neutral-900);
+}
+
+.text-gray-600 {
+  color: var(--color-neutral-600);
+}
+
+.text-gray-400 {
+  color: var(--color-neutral-400);
+}
+
+.text-gray-300 {
+  color: var(--color-neutral-300);
+}
+
+.text-gray-500 {
+  color: var(--color-neutral-500);
+}
+
+.text-gray-800 {
+  color: var(--color-neutral-800);
+}
+
+.bg-gray-50 {
+  background-color: var(--color-neutral-50);
+}
+
+.bg-gray-100 {
+  background-color: var(--color-neutral-100);
+}
+
+.bg-gray-700 {
+  background-color: var(--color-neutral-700);
+}
+
+.bg-gray-800 {
+  background-color: var(--color-neutral-800);
+}
+
+.border-gray-100 {
+  border-color: var(--color-neutral-100);
+}
+
+.border-gray-700 {
+  border-color: var(--color-neutral-700);
+}
+
+.hover\:text-primary-600:hover {
+  color: var(--color-primary-600);
+}
+
+.hover\:bg-primary-50:hover {
+  background-color: var(--color-primary-50);
+}
+
+/* Brand utility classes */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.text-wood {
+  color: var(--color-wood-600);
+}
+
+.bg-wood {
+  background-color: var(--color-wood-100);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
 }

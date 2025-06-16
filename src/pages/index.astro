@@ -1,36 +1,110 @@
 ---
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navigation from "../components/Navigation.astro";
+import HeroSection from "../components/HeroSection.astro";
+import AboutSection from "../components/AboutSection.astro";
+import ProductsSection from "../components/ProductsSection.astro";
+import PartnersSection from "../components/PartnersSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
-	<!-- Main content -->
-	<div class="container">
-		<!-- Make sure this Glide structure exists in your HTML -->
-		<div class="glide">
-			<div class="glide__track" data-glide-el="track">
-				<ul class="glide__slides">
-					<li class="glide__slide">Slide 1</li>
-					<li class="glide__slide">Slide 2</li>
-					<li class="glide__slide">Slide 3</li>
-					<li class="glide__slide">Slide 4</li>
-					<li class="glide__slide">Slide 5</li>
-				</ul>
-			</div>
-			<!-- Optional controls -->
-			<div class="glide__arrows" data-glide-el="controls">
-				<button
-					class="glide__arrow glide__arrow--left"
-					data-glide-dir="<">prev</button
-				>
-				<button
-					class="glide__arrow glide__arrow--right"
-					data-glide-dir=">">next</button
-				>
-			</div>
-		</div>
-	</div>
+<Layout
+  title="VM Madeiras & Cia - Madeiras de Qualidade em Teresópolis | 50 Anos de Tradição"
+  description="VM Madeiras & Cia: 50 anos fornecendo madeiras de qualidade em Teresópolis. Esquadrias, madeira para telhado, decks, assoalhos e linha ecológica. Licença IBAMA e entrega com frota própria."
+  keywords="madeira teresópolis, esquadrias, madeira telhado, decks, assoalhos, madeira ecológica, eucalipto, IBAMA, DOF, construção civil, marcenaria"
+>
+  <Navigation />
+  <main>
+    <HeroSection id="inicio" />
+    <AboutSection id="quem-somos" />
+    <ProductsSection id="produtos" />
+    <PartnersSection id="parceiros" />
+    <ContactSection id="contato" />
+  </main>
+  <Footer />
 </Layout>
+
+<script>
+  // Smooth scrolling for navigation links
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          const offsetTop = target.offsetTop - 80; // Account for fixed header
+
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+
+    // Add scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-in-up");
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    const animatedElements = document.querySelectorAll(
+      "section > div > div, .feature-card, .partner-card",
+    );
+    animatedElements.forEach((el) => observer.observe(el));
+
+    // Contact form handling
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm && contactForm instanceof HTMLFormElement) {
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Get form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+
+        // Simple form validation
+        if (!data.nome || !data.telefone || !data.mensagem) {
+          alert("Por favor, preencha todos os campos obrigatórios.");
+          return;
+        }
+
+        // Create WhatsApp message
+        const message = `Olá! Gostaria de solicitar um orçamento:
+
+Nome: ${data.nome}
+Telefone: ${data.telefone}
+Email: ${data.email || "Não informado"}
+Produto de interesse: ${data.produto || "Não especificado"}
+
+Mensagem: ${data.mensagem}`;
+
+        const whatsappUrl = `https://wa.me/5521264240600?text=${encodeURIComponent(message)}`;
+
+        // Show success message
+        alert(
+          "Obrigado pelo contato! Você será redirecionado para o WhatsApp.",
+        );
+
+        // Redirect to WhatsApp
+        window.open(whatsappUrl, "_blank");
+
+        // Reset form
+        this.reset();
+      });
+    }
+  });
+</script>
