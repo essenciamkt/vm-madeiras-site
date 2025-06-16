@@ -27,11 +27,11 @@ const sizeClasses = {
 
 const variantClasses = {
     primary:
-        "bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white shadow-lg hover:shadow-xl",
+        "bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-lg hover:shadow-xl",
     secondary:
-        "bg-white/90 backdrop-blur-sm border border-amber-200/50 text-amber-800 hover:bg-amber-50/90 hover:border-amber-300/50",
+        "bg-white/90 backdrop-blur-sm border border-primary-200/50 text-primary-800 hover:bg-primary-50/90 hover:border-primary-300/50",
     outline:
-        "border-2 border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white",
+        "border-2 border-primary-600 text-primary-700 hover:bg-primary-600 hover:text-white",
 };
 
 const baseClasses = `
@@ -39,7 +39,7 @@ const baseClasses = `
   font-semibold rounded-lg
   transition-all duration-300 ease-in-out
   transform hover:scale-105 hover:-translate-y-0.5
-  focus:outline-none focus:ring-4 focus:ring-amber-500/50
+  focus:outline-none focus:ring-4 focus:ring-primary-500/50
   active:scale-95
   ${sizeClasses[size]}
   ${variantClasses[variant]}

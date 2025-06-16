@@ -443,3 +443,255 @@ html {
 .bg-accent {
   background-color: var(--color-accent);
 }
+
+/* Accent color utilities for green elements */
+.bg-accent-100 {
+  background-color: var(--color-accent-100);
+}
+
+.bg-accent-500 {
+  background-color: var(--color-accent-500);
+}
+
+.bg-accent-600 {
+  background-color: var(--color-accent-600);
+}
+
+.text-accent-400 {
+  color: var(--color-accent-400);
+}
+
+.text-accent-500 {
+  color: var(--color-accent-500);
+}
+
+.text-accent-600 {
+  color: var(--color-accent-600);
+}
+
+.from-accent-500 {
+  --tw-gradient-from: var(--color-accent-500);
+  --tw-gradient-to: rgb(34 197 94 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-accent-600 {
+  --tw-gradient-to: var(--color-accent-600);
+}
+
+.bg-accent-500\/20 {
+  background-color: rgb(34 197 94 / 0.2);
+}
+
+/* Additional Tailwind utilities for new color palette */
+.from-primary-50 {
+    --tw-gradient-from: var(--color-primary-50);
+    --tw-gradient-to: rgb(253 242 242 / 0);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-primary-100 {
+    --tw-gradient-to: rgb(251 232 232 / 0);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-100), var(--tw-gradient-to);
+}
+
+.to-primary-600 {
+    --tw-gradient-to: var(--color-primary-600);
+}
+
+.to-primary-700 {
+    --tw-gradient-to: var(--color-primary-700);
+}
+
+/* Additional primary color utilities for Tailwind compatibility */
+.bg-primary-100 {
+  background-color: var(--color-primary-100);
+}
+
+.bg-primary-600 {
+  background-color: var(--color-primary-600);
+}
+
+.text-primary-500 {
+  color: var(--color-primary-500);
+}
+
+.text-primary-600 {
+  color: var(--color-primary-600);
+}
+
+.text-primary-800 {
+  color: var(--color-primary-800);
+}
+
+.from-primary-500 {
+  --tw-gradient-from: var(--color-primary-500);
+  --tw-gradient-to: rgb(211 93 93 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-primary-600 {
+  --tw-gradient-from: var(--color-primary-600);
+  --tw-gradient-to: rgb(169 58 51 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-primary-600 {
+  --tw-gradient-to: var(--color-primary-600);
+}
+
+.to-primary-700 {
+  --tw-gradient-to: var(--color-primary-700);
+}
+
+/* Hover states for primary colors */
+.hover\:bg-primary-50:hover {
+  background-color: var(--color-primary-50);
+}
+
+.hover\:bg-primary-100:hover {
+  background-color: var(--color-primary-100);
+}
+
+.hover\:text-primary-700:hover {
+  color: var(--color-primary-700);
+}
+
+/* Wood color utilities */
+.from-wood-50 {
+    --tw-gradient-from: var(--color-wood-50);
+    --tw-gradient-to: rgb(250 248 243 / 0);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-wood-50 {
+    --tw-gradient-to: var(--color-wood-50);
+}
+
+.to-wood-500 {
+    --tw-gradient-to: var(--color-wood-500);
+}
+
+/* Background colors */
+.bg-primary-50 {
+    background-color: var(--color-primary-50);
+}
+
+.bg-primary-100 {
+    background-color: var(--color-primary-100);
+}
+
+.bg-primary-200 {
+    background-color: var(--color-primary-200);
+}
+
+.bg-primary-500 {
+    background-color: var(--color-primary-500);
+}
+
+.bg-primary-600 {
+    background-color: var(--color-primary-600);
+}
+
+.bg-primary-700 {
+    background-color: var(--color-primary-700);
+}
+
+.bg-primary-800 {
+    background-color: var(--color-primary-800);
+}
+
+/* Background with opacity */
+.bg-primary-500\/10 {
+    background-color: rgb(211 93 93 / 0.1);
+}
+
+.bg-primary-500\/20 {
+    background-color: rgb(211 93 93 / 0.2);
+}
+
+/* Text colors */
+.text-primary-300 {
+    color: var(--color-primary-300);
+}
+
+.text-primary-400 {
+    color: var(--color-primary-400);
+}
+
+.text-primary-600 {
+    color: var(--color-primary-600);
+}
+
+.text-primary-700 {
+    color: var(--color-primary-700);
+}
+
+.text-primary-800 {
+    color: var(--color-primary-800);
+}
+
+/* Border colors */
+.border-primary-200 {
+    border-color: var(--color-primary-200);
+}
+
+.border-primary-300 {
+    border-color: var(--color-primary-300);
+}
+
+.border-primary-600 {
+    border-color: var(--color-primary-600);
+}
+
+/* Focus ring colors */
+.focus\:ring-primary-400:focus {
+    --tw-ring-color: var(--color-primary-400);
+}
+
+.focus\:ring-primary-500:focus {
+    --tw-ring-color: var(--color-primary-500);
+}
+
+/* Hover states */
+.hover\:bg-primary-50:hover {
+    background-color: var(--color-primary-50);
+}
+
+.hover\:bg-primary-600:hover {
+    background-color: var(--color-primary-600);
+}
+
+.hover\:text-primary-700:hover {
+    color: var(--color-primary-700);
+}
+
+.hover\:border-primary-300:hover {
+    border-color: var(--color-primary-300);
+}
+
+/* Shadow utilities */
+.shadow-primary-500\/10 {
+    box-shadow: 0 10px 15px -3px rgb(211 93 93 / 0.1), 0 4px 6px -2px rgb(211 93 93 / 0.05);
+}
+
+.hover\:shadow-primary-500\/10:hover {
+    box-shadow: 0 10px 15px -3px rgb(211 93 93 / 0.1), 0 4px 6px -2px rgb(211 93 93 / 0.05);
+}
+
+/* Wood utilities */
+.bg-wood-50 {
+    background-color: var(--color-wood-50);
+}
+
+.bg-wood-100 {
+    background-color: var(--color-wood-100);
+}
+
+.text-wood-800 {
+    color: var(--color-wood-800);
+}
+
+.border-wood-200 {
+    border-color: var(--color-wood-200);
+}
