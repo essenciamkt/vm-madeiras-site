@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.glide__slide {
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f5f5f5;
+	border-radius: 8px;
+	font-size: 24px;
+}
