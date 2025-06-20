@@ -15,16 +15,10 @@ const produtos = [
         image: "https://placehold.co/400x300?text=Portas+de+Madeira",
     },
     {
-        title: "Madeira de Telhado",
+        title: "Madeira para Telhado",
         description:
             "Estruturas para telhados com madeira tratada e certificada para maior durabilidade.",
         image: "https://placehold.co/400x300?text=Madeira+Telhado",
-    },
-    {
-        title: "Madeira Plástica",
-        description:
-            "Alternativa sustentável com resistência à umidade e pragas, ideal para áreas externas.",
-        image: "https://placehold.co/400x300?text=Madeira+Plástica",
     },
     {
         title: "Decks e Assoalhos",
@@ -33,10 +27,16 @@ const produtos = [
         image: "https://placehold.co/400x300?text=Decks+Assoalhos",
     },
     {
-        title: "Ferragens",
+        title: "Lambri (Forro)",
         description:
-            "Acessórios e componentes metálicos para construção e marcenaria.",
-        image: "https://placehold.co/400x300?text=Ferragens",
+            "Forros de madeira para acabamentos internos com alta qualidade e durabilidade.",
+        image: "https://placehold.co/400x300?text=Lambri+Forro",
+    },
+    {
+        title: "Madeiras Nobres",
+        description:
+            "Madeiras nobres selecionadas para projetos especiais e marcenaria fina.",
+        image: "https://placehold.co/400x300?text=Madeiras+Nobres",
     },
     {
         title: "Esquadrias",
@@ -45,16 +45,16 @@ const produtos = [
         image: "https://placehold.co/400x300?text=Esquadrias",
     },
     {
-        title: "Máquinas",
+        title: "Ferragens",
         description:
-            "Equipamentos e máquinas para carpintaria e marcenaria profissional.",
-        image: "https://placehold.co/400x300?text=Máquinas",
+            "Acessórios e componentes metálicos para construção e marcenaria.",
+        image: "https://placehold.co/400x300?text=Ferragens",
     },
     {
-        title: "Ferramentas",
+        title: "Compensados e Madeirites",
         description:
-            "Ferramentas manuais e elétricas para carpintaria e construção civil.",
-        image: "https://placehold.co/400x300?text=Ferramentas",
+            "Chapas de compensado e madeirite para diversos usos na construção civil.",
+        image: "https://placehold.co/400x300?text=Compensados+Madeirites",
     },
 ];
 ---
@@ -112,81 +112,6 @@ const produtos = [
                     />
                 ))
             }
-        </div>
-
-        <!-- Environmental Certification Banner -->
-        <div class="mt-20">
-            <div
-                class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl p-8 lg:p-12 text-white text-center relative overflow-hidden"
-            >
-                <div class="absolute inset-0 bg-black/10"></div>
-                <div class="relative z-10">
-                    <div class="flex justify-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center"
-                        >
-                            <svg
-                                class="w-8 h-8 text-white"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                ></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">
-                        Certificação Ambiental
-                    </h3>
-                    <p class="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
-                        Nossos produtos são provenientes de <strong
-                            >extração de manejo</strong
-                        >. Possuímos licença ambiental e registro do IBAMA, com
-                        a emissão de DOF de acordo com a legislação vigente no
-                        Brasil.
-                    </p>
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center"
-                    >
-                        <div class="bg-white/10 rounded-2xl p-6">
-                            <h4 class="font-bold text-lg mb-2">
-                                Licença IBAMA
-                            </h4>
-                            <p class="opacity-80">
-                                Extração certificada e legal
-                            </p>
-                        </div>
-                        <div class="bg-white/10 rounded-2xl p-6">
-                            <h4 class="font-bold text-lg mb-2">DOF Emitido</h4>
-                            <p class="opacity-80">
-                                Documento de origem florestal
-                            </p>
-                        </div>
-                        <div class="bg-white/10 rounded-2xl p-6">
-                            <h4 class="font-bold text-lg mb-2">
-                                Linha Ecológica
-                            </h4>
-                            <p class="opacity-80">
-                                Eucalipto de reflorestamento
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Decorative elements -->
-                <div
-                    class="absolute -top-8 -right-8 w-32 h-32 bg-white/5 rounded-full"
-                >
-                </div>
-                <div
-                    class="absolute -bottom-8 -left-8 w-24 h-24 bg-white/5 rounded-full"
-                >
-                </div>
-            </div>
         </div>
 
         <!-- CTA Section -->
