@@ -3,9 +3,11 @@ export interface Props {
     name: string;
     class?: string;
     size?: number;
+    color?: string;
+    bg?: string;
 }
 
-const { name, class: className = "w-6 h-6", size } = Astro.props;
+const { name, class: className = "w-6 h-6", size, color = "#7D2B2D", bg = "" } = Astro.props;
 
 const icons = {
     // Navigation icons
@@ -39,7 +41,7 @@ const icons = {
 };
 
 const iconPath = icons[name as keyof typeof icons];
-const finalClass = size ? `w-${size} h-${size}` : className;
+const finalClass = size ? `w-${size} h-${size} p-2 flex items-center justify-center` : `${className} p-2 flex items-center justify-center`;
 ---
 
 {
@@ -47,8 +49,9 @@ const finalClass = size ? `w-${size} h-${size}` : className;
         <svg
             class={finalClass}
             fill="none"
-            stroke="currentColor"
+            stroke={color}
             viewBox="0 0 24 24"
+            style={bg ? `background:${bg};border-radius:0.75rem;` : ""}
             xmlns="http://www.w3.org/2000/svg"
         >
             <Fragment set:html={iconPath} />

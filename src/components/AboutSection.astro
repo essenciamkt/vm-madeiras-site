@@ -1,4 +1,6 @@
 ---
+import Icon from "../components/Icon.astro";
+
 export interface Props {
     id?: string;
 }
@@ -71,25 +73,10 @@ const { id = "quem-somos" } = Astro.props;
                 </div>
 
                 <!-- Key Features -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
                     <div class="flex items-center space-x-3">
-                        <div
-                            class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center"
-                        >
-                            <svg
-                                class="w-5 h-5 text-primary-600"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                ></path>
-                            </svg>
+                        <div class="w-10 h-10 min-w-[40px] min-h-[40px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center">
+                            <Icon name="check" size={28} color="#7D2B2D" class="w-7 h-7" />
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-900">
@@ -102,23 +89,8 @@ const { id = "quem-somos" } = Astro.props;
                     </div>
 
                     <div class="flex items-center space-x-3">
-                        <div
-                            class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center"
-                        >
-                            <svg
-                                class="w-5 h-5 text-primary-600"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                                ></path>
-                            </svg>
+                        <div class="w-10 h-10 min-w-[40px] min-h-[40px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center">
+                            <Icon name="document" size={28} color="#7D2B2D" class="w-7 h-7" />
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-900">
@@ -131,23 +103,8 @@ const { id = "quem-somos" } = Astro.props;
                     </div>
 
                     <div class="flex items-center space-x-3">
-                        <div
-                            class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center"
-                        >
-                            <svg
-                                class="w-5 h-5 text-primary-600"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-                                ></path>
-                            </svg>
+                        <div class="w-10 h-10 min-w-[40px] min-h-[40px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center">
+                            <Icon name="truck" size={28} color="#7D2B2D" class="w-7 h-7" />
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-900">
@@ -160,23 +117,16 @@ const { id = "quem-somos" } = Astro.props;
                     </div>
 
                     <div class="flex items-center space-x-3">
-                        <div
-                            class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center"
-                        >
-                            <svg
-                                class="w-5 h-5 text-primary-600"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                                ></path>
-                            </svg>
+                        <div class="w-10 h-10 min-w-[40px] min-h-[40px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center">
+                            <Icon name="heart" size={28} color="#7D2B2D" class="w-7 h-7" />
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">
+                                Compromisso e Cuidado
+                            </h4>
+                            <p class="text-sm text-gray-600">
+                                Foco no desenvolvimento sustentável e respeito à natureza
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -208,28 +158,8 @@ const { id = "quem-somos" } = Astro.props;
                     class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-gray-100"
                 >
                     <div class="flex items-center space-x-4">
-                        <div
-                            class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center"
-                        >
-                            <svg
-                                class="w-6 h-6 text-primary-600"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                ></path>
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
+                        <div class="w-12 h-12 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center">
+                            <Icon name="location" size={24} color="#7D2B2D" />
                         </div>
                         <div>
                             <h4 class="font-bold text-gray-900">
