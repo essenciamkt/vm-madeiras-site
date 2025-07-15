@@ -1,0 +1,295 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import { MessageCircle, ArrowRight } from "lucide-astro";
+import FeatureCard from "../components/FeatureCard.astro";
+
+// Product data - in a real app, this would come from a CMS or database
+const produtos = [
+  {
+    id: "portas-madeira",
+    title: "Portas de Madeira",
+    description: "Portas de madeira de alta qualidade para residências e estabelecimentos comerciais.",
+    image: "https://placehold.co/400x300?text=Portas+de+Madeira",
+    price: "A partir de R$ 350,00",
+    category: "Esquadrias"
+  },
+  {
+    id: "madeira-telhado",
+    title: "Madeira para Telhado",
+    description: "Madeiras estruturais de qualidade para construção de telhados e coberturas.",
+    image: "https://placehold.co/400x300?text=Madeira+Telhado",
+    price: "A partir de R$ 25,00/m",
+    category: "Estrutural"
+  },
+  {
+    id: "decks-assoalhos",
+    title: "Decks e Assoalhos",
+    description: "Pisos em madeira natural para ambientes internos e externos.",
+    image: "https://placehold.co/400x300?text=Decks+Assoalhos",
+    price: "A partir de R$ 45,00/m²",
+    category: "Pisos"
+  },
+  {
+    id: "lambri-forro",
+    title: "Lambri (Forro)",
+    description: "Forros de madeira para acabamentos internos com alta qualidade e durabilidade.",
+    image: "https://placehold.co/400x300?text=Lambri+Forro",
+    price: "A partir de R$ 35,00/m²",
+    category: "Acabamentos"
+  },
+  {
+    id: "madeiras-nobres",
+    title: "Madeiras Nobres",
+    description: "Madeiras nobres selecionadas para projetos especiais e marcenaria fina.",
+    image: "https://placehold.co/400x300?text=Madeiras+Nobres",
+    price: "Consulte preços",
+    category: "Premium"
+  },
+  {
+    id: "esquadrias",
+    title: "Esquadrias",
+    description: "Janelas, portas e caixonetes em madeiras diversas com tamanhos variados.",
+    image: "https://placehold.co/400x300?text=Esquadrias",
+    price: "A partir de R$ 280,00",
+    category: "Esquadrias"
+  },
+  {
+    id: "ferragens",
+    title: "Ferragens",
+    description: "Dobradiças, fechaduras e puxadores de diversos estilos.",
+    image: "https://placehold.co/400x300?text=Ferragens",
+    price: "A partir de R$ 15,00",
+    category: "Acessórios"
+  },
+  {
+    id: "compensados",
+    title: "Compensados e Madeirites",
+    description: "Chapas de compensado e madeirite para diversos usos na construção civil.",
+    image: "https://placehold.co/400x300?text=Compensados+Madeirites",
+    price: "A partir de R$ 85,00",
+    category: "Chapas"
+  }
+];
+
+// Get unique categories
+const categories = [...new Set(produtos.map(p => p.category))];
+
+const title = "Produtos - VM Madeiras & Cia";
+const description = "Conheça nossa linha completa de produtos para construção civil e marcenaria. Madeiras de qualidade com certificação IBAMA.";
+const keywords = "produtos madeira, esquadrias, telhado, decks, assoalhos, ferragens, compensados, teresópolis";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <Navigation />
+  
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-primary-50/30 relative overflow-hidden">
+      <!-- Background decoration -->
+      <div class="absolute inset-0">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-200/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary-200/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="inline-block px-4 py-2 bg-primary-100 text-primary-800 text-sm font-semibold rounded-full mb-4">
+          Catálogo Completo
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Nossos <span class="text-primary-600">Produtos</span>
+        </h1>
+        <div class="w-16 h-1 bg-gradient-to-r from-primary-500 to-primary-500 mx-auto mb-6"></div>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          Oferecemos uma linha completa de produtos para construção civil e marcenaria, 
+          todos com certificação ambiental e a qualidade que você já conhece há 50 anos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-white border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <button 
+            class="filter-btn active px-6 py-3 bg-primary-600 text-white font-semibold rounded-full transition-all duration-300"
+            data-category="all"
+          >
+            Todos os Produtos
+          </button>
+          {categories.map((category) => (
+            <button 
+              class="filter-btn px-6 py-3 bg-gray-100 text-gray-700 font-semibold rounded-full hover:bg-primary-100 hover:text-primary-700 transition-all duration-300"
+              data-category={category}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="products-grid">
+          {produtos.map((produto) => (
+            <div class="product-card" data-category={produto.category}>
+              <div class="group relative overflow-hidden rounded-2xl bg-white border border-gray-200/60 shadow-sm hover:shadow-lg hover:border-gray-300/60 transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-1 hover:shadow-primary-500/10 h-full">
+                <div class="aspect-video overflow-hidden rounded-t-2xl">
+                  <img
+                    src={produto.image}
+                    alt={produto.title}
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="p-6 flex flex-col h-full">
+                  <div class="flex-grow">
+                    <div class="flex items-center justify-between mb-3">
+                      <span class="inline-block px-3 py-1 bg-primary-100 text-primary-800 text-xs font-semibold rounded-full">
+                        {produto.category}
+                      </span>
+                      <span class="text-primary-600 font-bold text-sm">
+                        {produto.price}
+                      </span>
+                    </div>
+
+                    <h3 class="font-bold text-xl text-gray-900 mb-3 group-hover:text-primary-700 transition-colors duration-300">
+                      {produto.title}
+                    </h3>
+
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                      {produto.description}
+                    </p>
+                  </div>
+
+                  <div class="flex gap-3 mt-auto">
+                    <a
+                      href={`/produto/${produto.id}`}
+                      class="flex-1 inline-flex items-center justify-center px-4 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors duration-300"
+                    >
+                      Ver Detalhes
+                    </a>
+                    <a
+                      href={`https://wa.me/5521264240600?text=Olá! Gostaria de mais informações sobre: ${produto.title}`}
+                      target="_blank"
+                      class="inline-flex items-center justify-center px-4 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-300"
+                    >
+                      <MessageCircle class="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Decorative gradient overlay -->
+                <div class="absolute inset-0 bg-gradient-to-br from-primary-500/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-primary-50 to-primary-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Não encontrou o que procura?
+        </h2>
+        <p class="text-xl text-gray-700 mb-8">
+          Temos uma linha ainda mais ampla de produtos. Entre em contato conosco para consultar disponibilidade.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+          <a
+            href="/#contato"
+            class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl shadow-lg hover:from-primary-700 hover:to-primary-800 transform hover:scale-105 transition-all duration-300"
+          >
+            Solicitar Orçamento
+            <ArrowRight class="ml-2 w-5 h-5" />
+          </a>
+          <a
+            href="https://wa.me/5521264240600?text=Olá! Gostaria de conhecer mais produtos da VM Madeiras."
+            target="_blank"
+            class="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-semibold rounded-xl shadow-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300"
+          >
+            <MessageCircle class="mr-2 w-5 h-5" />
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+
+        // Update active button
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active', 'bg-primary-600', 'text-white');
+          btn.classList.add('bg-gray-100', 'text-gray-700');
+        });
+        
+        button.classList.add('active', 'bg-primary-600', 'text-white');
+        button.classList.remove('bg-gray-100', 'text-gray-700');
+
+        // Filter products
+        productCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          
+          if (category === 'all' || cardCategory === category) {
+            card.style.display = 'block';
+            // Add animation
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+              card.style.transition = 'all 0.3s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 100);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .filter-btn.active {
+    background-color: var(--color-primary-600);
+    color: white;
+  }
+  
+  .product-card {
+    transition: all 0.3s ease;
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import GoogleMap from "../components/GoogleMap.astro";
+---
+
+<Layout title="Teste do Mapa - VM Madeiras & Cia">
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-8 text-center text-[#7D2B2D]">
+            Localização - VM Madeiras & Cia
+        </h1>
+
+        <div class="max-w-4xl mx-auto">
+            <!-- Address Info -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h2 class="text-xl font-semibold mb-4 text-[#7D2B2D]">
+                    Nosso Endereço
+                </h2>
+                <div class="space-y-2 text-gray-700">
+                    <p><strong>Endereço:</strong> Av. Alberto Torres, 500</p>
+                    <p><strong>Bairro:</strong> Alto</p>
+                    <p><strong>Cidade:</strong> Teresópolis - RJ</p>
+                    <p>
+                        <strong>Telefones:</strong> (21) 2642-4060 | 21 98132-0215
+                    </p>
+                    <p>
+                        <strong>Horário:</strong> Segunda a Sexta: 08:00-18:00 |
+                        Sábado: 08:00-12:00
+                    </p>
+                </div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-4 text-[#7D2B2D]">
+                    Como Chegar
+                </h2>
+                <GoogleMap
+                    address="Av. Alberto Torres, 500 - Alto - Teresópolis - RJ"
+                    height="450px"
+                    class="w-full"
+                />
+            </div>
+
+            <!-- Additional Info -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mt-8">
+                <h2 class="text-xl font-semibold mb-4 text-[#7D2B2D]">
+                    Informações Adicionais
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold mb-2">Facilidades</h3>
+                        <ul class="space-y-1 text-gray-700">
+                            <li>• Estacionamento próprio</li>
+                            <li>• Frota própria para entrega</li>
+                            <li>• Atendimento especializado</li>
+                            <li>• 50 anos de experiência</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">Produtos</h3>
+                        <ul class="space-y-1 text-gray-700">
+                            <li>• Madeiras nobres</li>
+                            <li>• Esquadrias</li>
+                            <li>• Decks e assoalhos</li>
+                            <li>• Ferragens</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

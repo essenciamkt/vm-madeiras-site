@@ -1,4 +1,15 @@
 ---
+import {
+    MapPin,
+    Phone,
+    Clock,
+    Map,
+    ExternalLink,
+    CheckCircle,
+    ArrowLeftRight,
+    MessageCircle,
+} from "lucide-astro";
+
 export interface Props {
     id?: string;
 }
@@ -57,25 +68,7 @@ const { id = "contato" } = Astro.props;
                         <div
                             class="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center flex-shrink-0"
                         >
-                            <svg
-                                class="w-6 h-6 text-primary-400"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                ></path>
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
+                            <MapPin class="w-6 h-6 text-primary-400" />
                         </div>
                         <div>
                             <h4 class="font-semibold text-lg mb-1">Endereço</h4>
@@ -91,9 +84,7 @@ const { id = "contato" } = Astro.props;
                         <div
                             class="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center flex-shrink-0"
                         >
-                            <i
-                                data-lucide="phone"
-                                class="w-6 h-6 text-primary-400"></i>
+                            <Phone class="w-6 h-6 text-primary-400" />
                         </div>
                         <div>
                             <h4 class="font-semibold text-lg mb-1">
@@ -102,17 +93,9 @@ const { id = "contato" } = Astro.props;
                             <p class="text-gray-300">(21) 2642-4060</p>
                             <p class="text-gray-300">
                                 (21) 98132-0215
-                                <svg
+                                <MessageCircle
                                     class="inline w-5 h-5 ml-2 align-text-bottom text-green-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    aria-label="WhatsApp"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.2 5.077 4.363.71.306 1.263.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 6.107h-.001a8.933 8.933 0 01-4.548-1.252l-.326-.194-3.377.892.902-3.289-.212-.337a8.922 8.922 0 01-1.366-4.722c.001-4.941 4.011-8.951 8.954-8.951 2.389 0 4.637.933 6.324 2.624a8.822 8.822 0 012.624 6.327c-.003 4.941-4.013 8.951-8.954 8.951zm7.666-16.597A10.92 10.92 0 0012.05 1.933C6.477 1.933 1.93 6.479 1.928 12.05c0 2.137.56 4.223 1.623 6.066l-1.71 6.164a1.001 1.001 0 00.991 1.263c.082 0 .164-.01.246-.03l6.13-1.627a10.96 10.96 0 004.752 1.104h.005c5.572 0 10.119-4.547 10.121-10.118a10.86 10.86 0 00-3.184-7.949z"
-                                    ></path>
-                                </svg>
+                                />
                             </p>
                         </div>
                     </div>
@@ -122,20 +105,7 @@ const { id = "contato" } = Astro.props;
                         <div
                             class="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center flex-shrink-0"
                         >
-                            <svg
-                                class="w-6 h-6 text-primary-400"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                ></path>
-                            </svg>
+                            <Clock class="w-6 h-6 text-primary-400" />
                         </div>
                         <div>
                             <h4 class="font-semibold text-lg mb-1">
@@ -156,20 +126,7 @@ const { id = "contato" } = Astro.props;
                         class="aspect-video bg-gray-700 rounded-xl flex items-center justify-center"
                     >
                         <div class="text-center">
-                            <svg
-                                class="w-12 h-12 text-gray-500 mx-auto mb-3"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7"
-                                ></path>
-                            </svg>
+                            <Map class="w-12 h-12 text-gray-500 mx-auto mb-3" />
                             <p class="text-gray-400">Mapa Interativo</p>
                             <p class="text-sm text-gray-500">
                                 Clique para abrir no Google Maps
@@ -182,20 +139,7 @@ const { id = "contato" } = Astro.props;
                         rel="noopener noreferrer"
                         class="inline-flex items-center mt-4 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-300"
                     >
-                        <svg
-                            class="w-4 h-4 mr-2"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                            ></path>
-                        </svg>
+                        <ExternalLink class="w-4 h-4 mr-2" />
                         Abrir no Google Maps
                     </a>
                 </div>
@@ -335,20 +279,7 @@ const { id = "contato" } = Astro.props;
                 <div
                     class="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mx-auto mb-4"
                 >
-                    <svg
-                        class="w-6 h-6 text-primary-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path>
-                    </svg>
+                    <CheckCircle class="w-6 h-6 text-primary-400" />
                 </div>
                 <h4 class="font-semibold text-lg mb-2">50 Anos de Tradição</h4>
                 <p class="text-gray-400 text-sm">
@@ -360,9 +291,7 @@ const { id = "contato" } = Astro.props;
                 <div
                     class="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mx-auto mb-4"
                 >
-                    <i
-                        data-lucide="check-circle"
-                        class="w-6 h-6 text-primary-400"></i>
+                    <CheckCircle class="w-6 h-6 text-primary-400" />
                 </div>
                 <h4 class="font-semibold text-lg mb-2">Certificação IBAMA</h4>
                 <p class="text-gray-400 text-sm">
@@ -374,20 +303,7 @@ const { id = "contato" } = Astro.props;
                 <div
                     class="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mx-auto mb-4"
                 >
-                    <svg
-                        class="w-6 h-6 text-primary-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-                        ></path>
-                    </svg>
+                    <ArrowLeftRight class="w-6 h-6 text-primary-400" />
                 </div>
                 <h4 class="font-semibold text-lg mb-2">Entrega Própria</h4>
                 <p class="text-gray-400 text-sm">

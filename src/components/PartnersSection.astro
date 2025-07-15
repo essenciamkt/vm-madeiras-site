@@ -1,4 +1,13 @@
 ---
+import {
+    Building,
+    Phone,
+    Mail,
+    Puzzle,
+    Calculator,
+    ChevronRight,
+} from "lucide-astro";
+
 export interface Props {
     id?: string;
 }
@@ -180,19 +189,7 @@ const engenheiros = [
                     <h3
                         class="text-2xl font-bold text-gray-900 mb-6 flex items-center"
                     >
-                        <svg
-                            class="w-8 h-8 mr-3"
-                            fill="none"
-                            stroke="#7D2B2D"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                            ></path>
-                        </svg>
+                        <Building class="w-8 h-8 mr-3" color="#7D2B2D" />
                         Arquitetos Parceiros
                     </h3>
                     <div
@@ -206,26 +203,16 @@ const engenheiros = [
                                     </h4>
                                     <div class="space-y-1 text-sm text-gray-600">
                                         <div class="flex items-center">
-                                            <svg
+                                            <Phone
                                                 class="w-4 h-4 mr-2"
-                                                fill="none"
-                                                stroke="#7D2B2D"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                                                />
-                                            </svg>
+                                                color="#7D2B2D"
+                                            />
                                             {arquiteto.telefone}
                                         </div>
                                         <div class="flex items-center">
-                                            <i
-                                                data-lucide="mail"
+                                            <Mail
                                                 class="w-4 h-4 mr-2"
-                                                style="color:#7D2B2D"
+                                                color="#7D2B2D"
                                             />
                                             {arquiteto.email}
                                         </div>
@@ -249,19 +236,7 @@ const engenheiros = [
                     <h3
                         class="text-2xl font-bold text-gray-900 mb-6 flex items-center"
                     >
-                        <svg
-                            class="w-8 h-8 mr-3"
-                            fill="none"
-                            stroke="#7D2B2D"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4H7a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
-                            ></path>
-                        </svg>
+                        <Puzzle class="w-8 h-8 mr-3" color="#7D2B2D" />
                         Carpinteiros Parceiros
                     </h3>
                     <div
@@ -274,19 +249,10 @@ const engenheiros = [
                                         {carpinteiro.nome}
                                     </h4>
                                     <div class="flex items-center text-sm text-gray-600">
-                                        <svg
+                                        <Phone
                                             class="w-4 h-4 mr-2"
-                                            fill="none"
-                                            stroke="#7D2B2D"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                                            />
-                                        </svg>
+                                            color="#7D2B2D"
+                                        />
                                         {carpinteiro.telefone}
                                     </div>
                                 </div>
@@ -308,19 +274,7 @@ const engenheiros = [
                     <h3
                         class="text-2xl font-bold text-gray-900 mb-6 flex items-center"
                     >
-                        <svg
-                            class="w-8 h-8 mr-3"
-                            fill="none"
-                            stroke="#7D2B2D"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                            ></path>
-                        </svg>
+                        <Building class="w-8 h-8 mr-3" color="#7D2B2D" />
                         Construtores Parceiros
                     </h3>
                     <div
@@ -334,36 +288,18 @@ const engenheiros = [
                                     </h4>
                                     <div class="space-y-1 text-sm text-gray-600">
                                         <div class="flex items-center">
-                                            <svg
+                                            <Phone
                                                 class="w-4 h-4 mr-2"
-                                                fill="none"
-                                                stroke="#7D2B2D"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                                                />
-                                            </svg>
+                                                color="#7D2B2D"
+                                            />
                                             {construtor.telefone}
                                         </div>
                                         {construtor.contato && (
                                             <div class="flex items-center">
-                                                <svg
+                                                <Mail
                                                     class="w-4 h-4 mr-2"
-                                                    fill="none"
-                                                    stroke="#7D2B2D"
-                                                    viewBox="0 0 24 24"
-                                                >
-                                                    <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                                    />
-                                                </svg>
+                                                    color="#7D2B2D"
+                                                />
                                                 {construtor.contato}
                                             </div>
                                         )}
@@ -387,19 +323,7 @@ const engenheiros = [
                     <h3
                         class="text-2xl font-bold text-gray-900 mb-6 flex items-center"
                     >
-                        <svg
-                            class="w-8 h-8 mr-3"
-                            fill="none"
-                            stroke="#7D2B2D"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-                            ></path>
-                        </svg>
+                        <Calculator class="w-8 h-8 mr-3" color="#7D2B2D" />
                         Engenheiros Parceiros
                     </h3>
                     <div
@@ -413,26 +337,16 @@ const engenheiros = [
                                     </h4>
                                     <div class="space-y-1 text-sm text-gray-600">
                                         <div class="flex items-center">
-                                            <svg
+                                            <Phone
                                                 class="w-4 h-4 mr-2"
-                                                fill="none"
-                                                stroke="#7D2B2D"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                                                />
-                                            </svg>
+                                                color="#7D2B2D"
+                                            />
                                             {engenheiro.telefone}
                                         </div>
                                         <div class="flex items-center">
-                                            <i
-                                                data-lucide="mail"
+                                            <Mail
                                                 class="w-4 h-4 mr-2"
-                                                style="color:#7D2B2D"
+                                                color="#7D2B2D"
                                             />
                                             {engenheiro.email}
                                         </div>
@@ -463,18 +377,7 @@ const engenheiros = [
                     class="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg"
                 >
                     Tornar-se Parceiro
-                    <svg
-                        class="ml-2 w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 5l7 7-7 7"></path>
-                    </svg>
+                    <ChevronRight class="ml-2 w-5 h-5" />
                 </a>
             </div>
         </div>

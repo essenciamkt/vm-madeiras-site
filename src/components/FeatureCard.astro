@@ -1,5 +1,46 @@
 ---
-import Icon from "../components/Icon.astro";
+import {
+    Check,
+    Star,
+    TreePine,
+    FileText,
+    Truck,
+    Heart,
+    MapPin,
+    Phone,
+    Mail,
+    Clock,
+    Shield,
+    Award,
+    Users,
+    Home,
+    Menu,
+    X,
+    ChevronRight,
+    ArrowRight,
+} from "lucide-astro";
+
+// Icon mapping for dynamic icon selection
+const iconMap: Record<string, any> = {
+    check: Check,
+    star: Star,
+    wood: TreePine,
+    document: FileText,
+    truck: Truck,
+    heart: Heart,
+    location: MapPin,
+    phone: Phone,
+    mail: Mail,
+    clock: Clock,
+    shield: Shield,
+    award: Award,
+    users: Users,
+    home: Home,
+    menu: Menu,
+    x: X,
+    "chevron-right": ChevronRight,
+    "arrow-right": ArrowRight,
+};
 
 export interface Props {
     title: string;
@@ -47,9 +88,12 @@ const {
 
     <div class="p-6">
         {
-            icon && (
+            icon && iconMap[icon] && (
                 <div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-gray-200 text-[#7D2B2D] shadow-lg">
-                    <Icon name={icon} size={24} color="#7D2B2D" />
+                    {(() => {
+                        const IconComponent = iconMap[icon];
+                        return <IconComponent size={24} color="#7D2B2D" />;
+                    })()}
                 </div>
             )
         }
@@ -74,20 +118,7 @@ const {
                     aria-label={`Saiba mais sobre ${title}`}
                 >
                     Saiba mais
-                    <svg
-                        class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 5l7 7-7 7"
-                        />
-                    </svg>
+                    <ChevronRight class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
             )
         }

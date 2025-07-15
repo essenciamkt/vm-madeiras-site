@@ -9,47 +9,55 @@ const { id = "produtos" } = Astro.props;
 
 const produtos = [
     {
+        id: "portas-madeira",
         title: "Portas",
         description:
             "Portas de madeira de alta qualidade para residências e estabelecimentos comerciais.",
         image: "https://placehold.co/400x300?text=Portas+de+Madeira",
     },
     {
+        id: "madeira-telhado",
         title: "Madeira para Telhado",
         description:
             "Madeiras para telhado de qualidade, realizada por fornecedores selecionados e certificados.",
         image: "https://placehold.co/400x300?text=Madeira+Telhado",
     },
     {
+        id: "decks-assoalhos",
         title: "Decks e Assoalhos",
         description:
-            "Pisos em madeira natural para ambientes internos externos.",
+            "Pisos em madeira natural para ambientes internos externos.",
         image: "https://placehold.co/400x300?text=Decks+Assoalhos",
     },
     {
+        id: "lambri-forro",
         title: "Lambri (Forro)",
         description:
             "Forros de madeira para acabamentos internos com alta qualidade e durabilidade.",
         image: "https://placehold.co/400x300?text=Lambri+Forro",
     },
     {
+        id: "madeiras-nobres",
         title: "Madeiras Nobres",
         description:
             "Madeiras nobres selecionadas para projetos especiais e marcenaria fina.",
         image: "https://placehold.co/400x300?text=Madeiras+Nobres",
     },
     {
+        id: "esquadrias",
         title: "Esquadrias",
         description:
             "Janelas, portas e caixonetes em madeiras diversas com tamanhos variados.",
         image: "https://placehold.co/400x300?text=Esquadrias",
     },
     {
+        id: "ferragens",
         title: "Ferragens",
         description: "Dobradiças, fechaduras e puxadores de diversos estilos.",
         image: "https://placehold.co/400x300?text=Ferragens",
     },
     {
+        id: "compensados",
         title: "Compensados e Madeirites",
         description:
             "Chapas de compensado e madeirite para diversos usos na construção civil.",
@@ -106,7 +114,7 @@ const produtos = [
                         title={produto.title}
                         description={produto.description}
                         image={produto.image}
-                        href="#contato"
+                        href={`/produto/${produto.id}`}
                         class="h-full"
                     />
                 ))
@@ -126,13 +134,22 @@ const produtos = [
                     garantir um ótimo atendimento. Entre em contato conosco para
                     receber seu orçamento sem compromisso.
                 </p>
-                <a
-                    href="#contato"
-                    class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg hover:from-primary-600 hover:to-primary-700 transform hover:scale-105 transition-all duration-300"
-                >
-                    Solicitar Orçamento
-                    <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
-                </a>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                        href="#contato"
+                        class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg hover:from-primary-600 hover:to-primary-700 transform hover:scale-105 transition-all duration-300"
+                    >
+                        Solicitar Orçamento
+                        <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                    </a>
+                    <a
+                        href="/produtos"
+                        class="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl shadow-lg border border-primary-200 hover:bg-primary-50 transform hover:scale-105 transition-all duration-300"
+                    >
+                        Ver Todos os Produtos
+                        <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
