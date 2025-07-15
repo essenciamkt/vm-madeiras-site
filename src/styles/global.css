@@ -8,7 +8,8 @@
 	--color-primary-300: #d1d1d1;
 	--color-primary-400: #b4b4b4;
 	--color-primary-500: #9a9a9a;
-	--color-primary-600: #616161; /* Cor principal */
+	--color-primary-600: #616161;
+	/* Cor principal */
 	--color-primary-700: #525252;
 	--color-primary-800: #464646;
 	--color-primary-900: #3a3a3a;
@@ -101,7 +102,8 @@
 
 /* Global scroll margin for all sections to account for fixed navbar */
 section[id] {
-	scroll-margin-top: 6rem; /* 96px - slightly more than navbar height */
+	scroll-margin-top: 6rem;
+	/* 96px - slightly more than navbar height */
 }
 
 /* Ensure smooth scrolling for all anchor links */
@@ -112,7 +114,8 @@ html {
 /* Additional padding for mobile devices */
 @media (max-width: 768px) {
 	section[id] {
-		scroll-margin-top: 5.5rem; /* 88px for mobile */
+		scroll-margin-top: 5.5rem;
+		/* 88px for mobile */
 	}
 }
 
@@ -153,98 +156,70 @@ html {
 
 /* Custom gradient meshes */
 .gradient-mesh-1 {
-	background: radial-gradient(
-			circle at 20% 80%,
+	background: radial-gradient(circle at 20% 80%,
 			rgba(169, 58, 51, 0.1) 0%,
-			transparent 50%
-		),
-		radial-gradient(
-			circle at 80% 20%,
+			transparent 50%),
+		radial-gradient(circle at 80% 20%,
 			rgba(141, 196, 160, 0.15) 0%,
-			transparent 50%
-		),
-		radial-gradient(
-			circle at 40% 40%,
+			transparent 50%),
+		radial-gradient(circle at 40% 40%,
 			rgba(212, 199, 176, 0.2) 0%,
-			transparent 50%
-		);
+			transparent 50%);
 }
 
 .gradient-mesh-2 {
-	background: radial-gradient(
-			circle at 60% 10%,
+	background: radial-gradient(circle at 60% 10%,
 			rgba(169, 58, 51, 0.08) 0%,
-			transparent 50%
-		),
-		radial-gradient(
-			circle at 20% 70%,
+			transparent 50%),
+		radial-gradient(circle at 20% 70%,
 			rgba(156, 132, 96, 0.12) 0%,
-			transparent 50%
-		),
-		radial-gradient(
-			circle at 90% 90%,
+			transparent 50%),
+		radial-gradient(circle at 90% 90%,
 			rgba(250, 248, 243, 0.6) 0%,
-			transparent 50%
-		);
+			transparent 50%);
 }
 
 .gradient-mesh-wood {
-	background: radial-gradient(
-			circle at 30% 20%,
+	background: radial-gradient(circle at 30% 20%,
 			rgba(115, 95, 71, 0.1) 0%,
-			transparent 50%
-		),
-		radial-gradient(
-			circle at 70% 80%,
+			transparent 50%),
+		radial-gradient(circle at 70% 80%,
 			rgba(169, 58, 51, 0.08) 0%,
-			transparent 50%
-		),
-		radial-gradient(
-			circle at 50% 50%,
+			transparent 50%),
+		radial-gradient(circle at 50% 50%,
 			rgba(244, 241, 234, 0.4) 0%,
-			transparent 50%
-		);
+			transparent 50%);
 }
 
 /* Brand gradient utilities */
 .gradient-primary {
-	background: linear-gradient(
-		135deg,
-		var(--color-primary-500),
-		var(--color-primary-700)
-	);
+	background: linear-gradient(135deg,
+			var(--color-primary-500),
+			var(--color-primary-700));
 }
 
 .gradient-primary-soft {
-	background: linear-gradient(
-		135deg,
-		var(--color-primary-50),
-		var(--color-primary-100)
-	);
+	background: linear-gradient(135deg,
+			var(--color-primary-50),
+			var(--color-primary-100));
 }
 
 .gradient-wood {
-	background: linear-gradient(
-		135deg,
-		var(--color-wood-200),
-		var(--color-wood-400)
-	);
+	background: linear-gradient(135deg,
+			var(--color-wood-200),
+			var(--color-wood-400));
 }
 
 .gradient-wood-dark {
-	background: linear-gradient(
-		135deg,
-		var(--color-wood-500),
-		var(--color-wood-700)
-	);
+	background: linear-gradient(135deg,
+			var(--color-wood-500),
+			var(--color-wood-700));
 }
 
 .gradient-nature {
-	background: linear-gradient(
-		135deg,
-		var(--color-wood-300),
-		var(--color-accent-400)
-	);
+	background: linear-gradient(135deg,
+			var(--color-wood-300),
+			var(--color-accent-400));
 }
 
 /* Shadow utilities with brand colors */
@@ -318,11 +293,9 @@ html {
 	align-items: center;
 	justify-content: center;
 	padding: 0.75rem 1.5rem;
-	background: linear-gradient(
-		135deg,
-		var(--color-primary-600),
-		var(--color-primary-700)
-	);
+	background: linear-gradient(135deg,
+			var(--color-primary-600),
+			var(--color-primary-700));
 	color: white;
 	font-weight: 600;
 	border-radius: 0.5rem;
@@ -334,11 +307,9 @@ html {
 }
 
 .btn-primary:hover {
-	background: linear-gradient(
-		135deg,
-		var(--color-primary-700),
-		var(--color-primary-800)
-	);
+	background: linear-gradient(135deg,
+			var(--color-primary-700),
+			var(--color-primary-800));
 	transform: translateY(-1px);
 	box-shadow: 0 6px 16px rgba(169, 58, 51, 0.4);
 }
@@ -370,11 +341,9 @@ html {
 	align-items: center;
 	justify-content: center;
 	padding: 0.75rem 1.5rem;
-	background: linear-gradient(
-		135deg,
-		var(--color-accent-500),
-		var(--color-accent-600)
-	);
+	background: linear-gradient(135deg,
+			var(--color-accent-500),
+			var(--color-accent-600));
 	color: white;
 	font-weight: 600;
 	border-radius: 0.5rem;
@@ -386,22 +355,18 @@ html {
 }
 
 .btn-accent:hover {
-	background: linear-gradient(
-		135deg,
-		var(--color-accent-600),
-		var(--color-accent-700)
-	);
+	background: linear-gradient(135deg,
+			var(--color-accent-600),
+			var(--color-accent-700));
 	transform: translateY(-1px);
 	box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
 }
 
 /* Text gradients */
 .text-gradient-primary {
-	background: linear-gradient(
-		135deg,
-		var(--color-primary-600),
-		var(--color-primary-800)
-	);
+	background: linear-gradient(135deg,
+			var(--color-primary-600),
+			var(--color-primary-800));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -409,11 +374,9 @@ html {
 }
 
 .text-gradient-wood {
-	background: linear-gradient(
-		135deg,
-		var(--color-wood-600),
-		var(--color-wood-800)
-	);
+	background: linear-gradient(135deg,
+			var(--color-wood-600),
+			var(--color-wood-800));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -422,10 +385,12 @@ html {
 
 /* Theme-specific animations */
 @keyframes pulseWarm {
+
 	0%,
 	100% {
 		box-shadow: 0 0 0 0 rgba(169, 58, 51, 0.4);
 	}
+
 	50% {
 		box-shadow: 0 0 0 10px rgba(169, 58, 51, 0);
 	}
@@ -754,13 +719,11 @@ html {
 
 /* Shadow utilities */
 .shadow-primary-500\/10 {
-	box-shadow: 0 10px 15px -3px rgb(211 93 93 / 0.1), 0 4px 6px -2px
-		rgb(211 93 93 / 0.05);
+	box-shadow: 0 10px 15px -3px rgb(211 93 93 / 0.1), 0 4px 6px -2px rgb(211 93 93 / 0.05);
 }
 
 .hover\:shadow-primary-500\/10:hover {
-	box-shadow: 0 10px 15px -3px rgb(211 93 93 / 0.1), 0 4px 6px -2px
-		rgb(211 93 93 / 0.05);
+	box-shadow: 0 10px 15px -3px rgb(211 93 93 / 0.1), 0 4px 6px -2px rgb(211 93 93 / 0.05);
 }
 
 /* Wood utilities */
@@ -779,3 +742,17 @@ html {
 .border-wood-200 {
 	border-color: var(--color-wood-200);
 }
+
+/* Lucide auto-init */
+:root::after {
+	content: '';
+}
+
+@media (min-width: 0px) {
+	body:after {
+		content: '';
+		display: none;
+	}
+}
+
+/* Lucide auto-init script */
