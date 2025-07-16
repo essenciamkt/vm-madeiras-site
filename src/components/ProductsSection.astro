@@ -1,5 +1,6 @@
 ---
 import FeatureCard from "../components/FeatureCard.astro";
+import { ArrowRight } from "lucide-astro";
 
 export interface Props {
     id?: string;
@@ -140,14 +141,14 @@ const produtos = [
                         class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg hover:from-primary-600 hover:to-primary-700 transform hover:scale-105 transition-all duration-300"
                     >
                         Solicitar Orçamento
-                        <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        <ArrowRight class="ml-2 w-5 h-5" />
                     </a>
                     <a
                         href="/produtos"
                         class="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl shadow-lg border border-primary-200 hover:bg-primary-50 transform hover:scale-105 transition-all duration-300"
                     >
                         Ver Todos os Produtos
-                        <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        <ArrowRight class="ml-2 w-5 h-5" />
                     </a>
                 </div>
             </div>
