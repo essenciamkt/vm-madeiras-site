@@ -1,0 +1,255 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import {
+    ArrowRight,
+    MessageCircle,
+    CheckCircle,
+    ArrowLeft,
+} from "lucide-astro";
+import { produtos, getProdutoById } from "../../data/produtos.js";
+
+export async function getStaticPaths() {
+    return produtos.map((produto) => ({
+        params: { id: produto.id },
+    }));
+}
+
+const { id } = Astro.params;
+const produto = getProdutoById(id);
+
+if (!produto) {
+    return Astro.redirect("/404");
+}
+
+const whatsappNumber = "5521264240600";
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre:%20${encodeURIComponent(produto.title)}`;
+---
+
+<Layout
+    title={produto.title + " - VM Madeiras & Cia"}
+    description={produto.description}
+>
+    <Navigation />
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section
+            class="py-16 bg-gradient-to-br from-gray-50 to-primary-50/30 relative overflow-hidden"
+        >
+            <!-- Background decoration -->
+            <div class="absolute inset-0">
+                <div
+                    class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-200/20 rounded-full blur-3xl"
+                >
+                </div>
+                <div
+                    class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary-200/20 rounded-full blur-3xl"
+                >
+                </div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Breadcrumb -->
+                <div class="mb-8">
+                    <a
+                        href="/#produtos"
+                        class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium transition-colors duration-300"
+                    >
+                        <ArrowLeft class="w-4 h-4 mr-2" />
+                        Voltar aos Produtos
+                    </a>
+                </div>
+
+                <!-- Product Header -->
+                <div class="text-center mb-12">
+                    <span
+                        class="inline-block px-4 py-2 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full mb-4"
+                    >
+                        Linha de Produtos
+                    </span>
+                    <h1
+                        class="text-4xl md:text-5xl font-bold text-gradient-primary mb-6"
+                    >
+                        {produto.title}
+                    </h1>
+                    <div
+                        class="w-16 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto mb-6"
+                    >
+                    </div>
+                    <p
+                        class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
+                    >
+                        {produto.detailedDescription}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Gallery -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+                >
+                    {
+                        produto.images.map((image, index) => (
+                            <div class="group relative overflow-hidden rounded-2xl shadow-xl">
+                                <img
+                                    src={image}
+                                    alt={`${produto.title} - Imagem ${index + 1}`}
+                                    class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Features -->
+        <section class="py-16 bg-gradient-to-br from-gray-50 to-primary-50/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+                    >
+                        Características e <span class="text-primary-600"
+                            >Benefícios</span
+                        >
+                    </h2>
+                    <div
+                        class="w-16 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto"
+                    >
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {
+                        produto.features.map((feature) => (
+                            <div class="flex items-start space-x-4 bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/30 shadow-lg">
+                                <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <CheckCircle class="w-5 h-5 text-primary-600" />
+                                </div>
+                                <div>
+                                    <p class="text-gray-800 font-medium text-lg">
+                                        {feature}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section
+            class="py-16 bg-gradient-to-br from-primary-600 to-primary-800 text-white relative overflow-hidden"
+        >
+            <!-- Background decoration -->
+            <div class="absolute inset-0">
+                <div
+                    class="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+                >
+                </div>
+                <div
+                    class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+                >
+                </div>
+            </div>
+
+            <div
+                class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+            >
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Interessado em nossos produtos?
+                </h2>
+                <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+                    Nossa equipe está preparada para esclarecer suas dúvidas e
+                    fornecer um orçamento personalizado para seu projeto.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                        href={whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center px-8 py-4 bg-green-600 text-white font-semibold rounded-xl shadow-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300"
+                    >
+                        <MessageCircle class="mr-2 w-5 h-5" />
+                        Falar no WhatsApp
+                    </a>
+                    <a
+                        href="/#contato"
+                        class="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl shadow-lg hover:bg-primary-50 transform hover:scale-105 transition-all duration-300"
+                    >
+                        Solicitar Orçamento
+                        <ArrowRight class="ml-2 w-5 h-5" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Indicators -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div
+                        class="bg-gradient-to-br from-gray-50 to-primary-50/30 rounded-2xl p-8 border border-primary-100"
+                    >
+                        <div
+                            class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                        >
+                            <CheckCircle class="w-8 h-8 text-primary-600" />
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-gray-900">
+                            50 Anos de Tradição
+                        </h3>
+                        <p class="text-gray-600">
+                            Meio século servindo Teresópolis com qualidade e
+                            confiança
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-br from-gray-50 to-primary-50/30 rounded-2xl p-8 border border-primary-100"
+                    >
+                        <div
+                            class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                        >
+                            <CheckCircle class="w-8 h-8 text-primary-600" />
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-gray-900">
+                            Certificação IBAMA
+                        </h3>
+                        <p class="text-gray-600">
+                            Produtos com licença ambiental e DOF garantidos
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-br from-gray-50 to-primary-50/30 rounded-2xl p-8 border border-primary-100"
+                    >
+                        <div
+                            class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                        >
+                            <CheckCircle class="w-8 h-8 text-primary-600" />
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-gray-900">
+                            Entrega Própria
+                        </h3>
+                        <p class="text-gray-600">
+                            Frota própria para entrega rápida e segura
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

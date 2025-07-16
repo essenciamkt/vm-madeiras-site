@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
-:root {
-	/* Brand Primary Color - Tom de Cinza #616161 */
-	--color-primary-50: #f8f8f8;
-	--color-primary-100: #f0f0f0;
-	--color-primary-200: #e4e4e4;
-	--color-primary-300: #d1d1d1;
-	--color-primary-400: #b4b4b4;
-	--color-primary-500: #9a9a9a;
-	--color-primary-600: #616161;
-	/* Cor principal */
-	--color-primary-700: #525252;
-	--color-primary-800: #464646;
-	--color-primary-900: #3a3a3a;
+@theme {
+	/* Brand Primary Color - Tom de Vinho #A93A33 */
+	--color-primary-50: #fbeceb;
+	--color-primary-100: #f5d2cf;
+	--color-primary-200: #e9a7a0;
+	--color-primary-300: #db7a6e;
+	--color-primary-400: #c94d3e;
+	--color-primary-500: #b53a2d;
+	--color-primary-600: #a93a33; /* Cor principal: vinho */
+	--color-primary-700: #7d2b2d;
+	--color-primary-800: #5a1e1f;
+	--color-primary-900: #3d1314;
 
 	/* Complementary Colors - Tons de Madeira */
 	--color-wood-50: #faf8f3;
@@ -194,8 +193,24 @@ html {
 /* Brand gradient utilities */
 .gradient-primary {
 	background: linear-gradient(135deg,
-			var(--color-primary-500),
-			var(--color-primary-700));
+		var(--color-primary-500),
+		var(--color-primary-700));
+	/* Enable text gradients */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+
+.gradient-primary-light {
+	background: linear-gradient(135deg,
+		var(--color-primary-300),
+		var(--color-primary-500));
+	/* Enable text gradients */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
 }
 
 .gradient-primary-soft {
