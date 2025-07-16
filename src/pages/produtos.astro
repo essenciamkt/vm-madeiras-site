@@ -44,7 +44,7 @@ const produtos = [
     description: "Madeiras nobres selecionadas para projetos especiais e marcenaria fina.",
     image: "https://placehold.co/400x300?text=Madeiras+Nobres",
     price: "Consulte preços",
-    category: "Premium"
+    category: "Marcenaria"
   },
   {
     id: "esquadrias",
@@ -60,7 +60,7 @@ const produtos = [
     description: "Dobradiças, fechaduras e puxadores de diversos estilos.",
     image: "https://placehold.co/400x300?text=Ferragens",
     price: "A partir de R$ 15,00",
-    category: "Acessórios"
+    category: "Esquadrias"
   },
   {
     id: "compensados",
@@ -146,13 +146,10 @@ const keywords = "produtos madeira, esquadrias, telhado, decks, assoalhos, ferra
                 </div>
 
                 <div class="p-6 flex flex-col h-full">
-                  <div class="flex-grow">
+                  <div class="">
                     <div class="flex items-center justify-between mb-3">
                       <span class="inline-block px-3 py-1 bg-gray-100 text-primary-800 text-xs font-semibold rounded-full">
                         {produto.category}
-                      </span>
-                      <span class="text-primary-600 font-bold text-sm">
-                        {produto.price}
                       </span>
                     </div>
 
