@@ -9,7 +9,7 @@ const produtos = [
   {
     id: "portas-madeira",
     title: "Portas de Madeira",
-    description: "Portas de madeira de alta qualidade para residências e estabelecimentos comerciais.",
+    description: "Nossa linha de portas de madeira oferece soluções completas para residências e estabelecimentos comerciais. Trabalhamos com madeiras variadas, garantindo durabilidade e beleza para seu projeto. Oferecemos diversos modelos, tamanhos e acabamentos para atender às suas necessidades específicas.",
     image: "https://placehold.co/400x300?text=Portas+de+Madeira",
     price: "A partir de R$ 350,00",
     category: "Esquadrias"
@@ -17,7 +17,7 @@ const produtos = [
   {
     id: "madeira-telhado",
     title: "Madeira para Telhado",
-    description: "Madeiras estruturais de qualidade para construção de telhados e coberturas.",
+    description: "Oferecemos madeiras estruturais de primeira qualidade para construção de telhados e coberturas. Todas as madeiras que comercializamos são certificadas pelo IBAMA e de origem de manejo florestal sustentável. Trabalhamos com vigas, caibros, ripas e demais peças estruturais necessárias para seu projeto.",
     image: "https://placehold.co/400x300?text=Madeira+Telhado",
     price: "A partir de R$ 25,00/m",
     category: "Estrutural"
@@ -25,7 +25,7 @@ const produtos = [
   {
     id: "decks-assoalhos",
     title: "Decks e Assoalhos",
-    description: "Pisos em madeira natural para ambientes internos e externos.",
+    description: "Nossa linha de decks e assoalhos oferece beleza natural e durabilidade para seus ambientes. Trabalhamos com madeiras nobres, ideais tanto para áreas internas quanto externas. Todas as madeiras que comercializamos são certificadas pelo IBAMA e de origem de manejo florestal sustentável.",
     image: "https://placehold.co/400x300?text=Decks+Assoalhos",
     price: "A partir de R$ 45,00/m²",
     category: "Pisos"
@@ -33,7 +33,7 @@ const produtos = [
   {
     id: "lambri-forro",
     title: "Lambri (Forro)",
-    description: "Forros de madeira para acabamentos internos com alta qualidade e durabilidade.",
+    description: "Nossos lambris de madeira proporcionam acabamentos sofisticados e aconchegantes para ambientes internos. Oferecemos diferentes tipos de madeira com seus respectivos acabamentos para criar o ambiente perfeito para seu projeto.",
     image: "https://placehold.co/400x300?text=Lambri+Forro",
     price: "A partir de R$ 35,00/m²",
     category: "Acabamentos"
@@ -49,7 +49,7 @@ const produtos = [
   {
     id: "esquadrias",
     title: "Esquadrias",
-    description: "Janelas, portas e caixonetes em madeiras diversas com tamanhos variados.",
+    description: "Nossa linha inclui janelas, portas e caixonetes em madeiras diversas com tamanhos variados. Tudo pensado para oferecer o melhor pra você.",
     image: "https://placehold.co/400x300?text=Esquadrias",
     price: "A partir de R$ 280,00",
     category: "Esquadrias"
@@ -57,7 +57,7 @@ const produtos = [
   {
     id: "ferragens",
     title: "Ferragens",
-    description: "Dobradiças, fechaduras e puxadores de diversos estilos.",
+    description: "Dobradiças, fechaduras e puxadores com diversos acabamentos e estilos.",
     image: "https://placehold.co/400x300?text=Ferragens",
     price: "A partir de R$ 15,00",
     category: "Esquadrias"
@@ -65,7 +65,7 @@ const produtos = [
   {
     id: "compensados",
     title: "Compensados e Madeirites",
-    description: "Chapas de compensado e madeirite para diversos usos na construção civil.",
+    description: "Compensados e madeirites para movelaria e construção civil. Aqui você encontra madeirite resinado e plastificado e compensados navais.",
     image: "https://placehold.co/400x300?text=Compensados+Madeirites",
     price: "A partir de R$ 85,00",
     category: "Chapas"
@@ -218,7 +218,7 @@ const keywords = "produtos madeira, esquadrias, telhado, decks, assoalhos, ferra
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
+    const productCards = document.querySelectorAll<HTMLDivElement>('.product-card');
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
