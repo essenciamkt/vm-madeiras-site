@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import CookieBanner from "../components/CookieBanner.astro";
 
 export interface Props {
 	title?: string;
@@ -129,6 +130,7 @@ const {
 	</head>
 	<body class="bg-[#ece8dc] font-sans antialiased">
 		<slot />
+		<CookieBanner client:load />
 
 		<script is:inline>
 			document.addEventListener("DOMContentLoaded", () => {
