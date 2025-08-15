@@ -165,14 +165,11 @@
     const analyticsToggle = document.getElementById("analytics-toggle");
     const marketingToggle = document.getElementById("marketing-toggle");
 
-    // Verificar estado dos cookies
-    const cookiesAccepted = localStorage.getItem("cookiesAccepted");
-
     // Mostrar modal se cookies não foram configurados
-    if (!cookiesAccepted) {
+    if (!localStorage.getItem("cookiesAccepted")) {
       if (modal) modal.classList.remove("hidden");
     } else {
-      // Garantir que o modal permaneça oculto se já foi configurado
+      // Garantir que o modal permaneça oculto se os cookies já foram aceitos
       if (modal) modal.classList.add("hidden");
     }
 
