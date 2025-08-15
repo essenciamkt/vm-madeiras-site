@@ -5,7 +5,7 @@
 <!-- Modal de configuração de cookies -->
 <div
   id="cookie-modal"
-  class="fixed inset-0 bg-black/30 flex items-center justify-center z-50"
+  class="fixed inset-0 bg-black/30 flex items-center justify-center z-50 hidden"
 >
   <div class="bg-white rounded-lg max-w-md w-full mx-4 shadow-xl">
     <!-- Header -->
@@ -165,9 +165,15 @@
     const analyticsToggle = document.getElementById("analytics-toggle");
     const marketingToggle = document.getElementById("marketing-toggle");
 
+    // Verificar estado dos cookies
+    const cookiesAccepted = localStorage.getItem("cookiesAccepted");
+
     // Mostrar modal se cookies não foram configurados
-    if (!localStorage.getItem("cookiesAccepted")) {
+    if (!cookiesAccepted) {
       if (modal) modal.classList.remove("hidden");
+    } else {
+      // Garantir que o modal permaneça oculto se já foi configurado
+      if (modal) modal.classList.add("hidden");
     }
 
     // Fechar modal
