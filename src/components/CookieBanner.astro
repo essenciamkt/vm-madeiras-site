@@ -174,7 +174,7 @@
   </div>
 </div>
 
-<script>
+<script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     const banner = document.getElementById("cookie-banner");
     const openConfigBtn = document.getElementById("open-config");
@@ -188,6 +188,7 @@
     const analyticsToggle = document.getElementById("analytics-toggle");
     const marketingToggle = document.getElementById("marketing-toggle");
 
+    // helper removido: as checagens foram feitas inline para evitar reclamações de tipagem
     const showBanner = () => banner && banner.classList.remove("hidden");
     const hideBanner = () => banner && banner.classList.add("hidden");
     const openModal = () => modal && modal.classList.remove("hidden");
@@ -239,10 +240,8 @@
       confirmBtn.addEventListener("click", () => {
         const preferences = {
           essential: true,
-          analytics:
-            analyticsToggle && (analyticsToggle as HTMLInputElement).checked,
-          marketing:
-            marketingToggle && (marketingToggle as HTMLInputElement).checked,
+          analytics: analyticsToggle instanceof HTMLInputElement ? analyticsToggle.checked : false,
+          marketing: marketingToggle instanceof HTMLInputElement ? marketingToggle.checked : false,
         };
         localStorage.setItem("cookiesAccepted", "configured");
         localStorage.setItem("cookiePreferences", JSON.stringify(preferences));

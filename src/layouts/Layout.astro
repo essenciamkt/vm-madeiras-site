@@ -53,7 +53,7 @@ const {
 		/>
 
 		<!-- Structured Data -->
-		<script type="application/ld+json">
+<script is:inline type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@type": "LocalBusiness",
@@ -84,7 +84,7 @@ const {
 		/>
 
 		<!-- Force navbar visibility script -->
-		<script>
+<script is:inline>
 			// Critical navbar fix - run immediately
 			function forceNavbarVisibility() {
 				const nav =
@@ -130,7 +130,7 @@ const {
 	</head>
 	<body class="bg-[#ece8dc] font-sans antialiased">
 		<slot />
-		<CookieBanner client:load />
+		<CookieBanner />
 
 		<script is:inline>
 			document.addEventListener("DOMContentLoaded", () => {
