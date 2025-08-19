@@ -2,6 +2,25 @@
 
 ---
 
+<!-- Banner simples de cookies -->
+<div id="cookie-banner" class="fixed inset-x-0 bottom-0 z-40 hidden">
+  <div class="max-w-5xl mx-auto px-4 pb-4">
+    <div class="bg-white rounded-lg shadow-xl p-4 md:p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-gray-200">
+      <p class="text-sm text-gray-700">
+        Usamos cookies para personalizar conteúdos e melhorar a sua experiência.
+      </p>
+      <div class="flex items-center gap-3">
+        <button id="open-config" class="px-4 py-2 rounded-lg bg-gray-200 text-gray-800 font-medium hover:bg-gray-300 transition-colors">
+          Configurar
+        </button>
+        <button id="accept-simple" class="px-4 py-2 rounded-lg bg-primary-600 text-white font-medium hover:bg-primary-700 transition-colors">
+          Entendi e aceito
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Modal de configuração de cookies -->
 <div
   id="cookie-modal"
@@ -157,6 +176,10 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("cookie-banner");
+    const openConfigBtn = document.getElementById("open-config");
+    const acceptSimpleBtn = document.getElementById("accept-simple");
+
     const modal = document.getElementById("cookie-modal");
     const closeBtn = document.getElementById("close-modal");
     const confirmBtn = document.getElementById("confirm-config");
@@ -165,19 +188,50 @@
     const analyticsToggle = document.getElementById("analytics-toggle");
     const marketingToggle = document.getElementById("marketing-toggle");
 
-    // Mostrar modal se cookies não foram configurados
+    const showBanner = () => banner && banner.classList.remove("hidden");
+    const hideBanner = () => banner && banner.classList.add("hidden");
+    const openModal = () => modal && modal.classList.remove("hidden");
+    const closeModal = (showBasic = true) => {
+      if (modal) modal.classList.add("hidden");
+      if (showBasic && !localStorage.getItem("cookiesAccepted")) {
+        showBanner();
+      }
+    };
+
+    // Exibir primeiro o banner simples se ainda não houve decisão
     if (!localStorage.getItem("cookiesAccepted")) {
-      if (modal) modal.classList.remove("hidden");
+      showBanner();
+      if (modal) modal.classList.add("hidden");
     } else {
-      // Garantir que o modal permaneça oculto se os cookies já foram aceitos
+      hideBanner();
       if (modal) modal.classList.add("hidden");
     }
 
-    // Fechar modal
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
+    // Ações do banner simples
+    if (openConfigBtn) {
+      openConfigBtn.addEventListener("click", () => {
+        hideBanner();
+        openModal();
+      });
+    }
+
+    if (acceptSimpleBtn) {
+      acceptSimpleBtn.addEventListener("click", () => {
+        const preferences = {
+          essential: true,
+          analytics: true,
+          marketing: true,
+        };
+        localStorage.setItem("cookiesAccepted", "all");
+        localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
+        hideBanner();
         if (modal) modal.classList.add("hidden");
       });
+    }
+
+    // Fechar modal (sem confirmar) volta para o banner simples
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => closeModal(true));
     }
 
     // Confirmar configurações
@@ -192,7 +246,8 @@
         };
         localStorage.setItem("cookiesAccepted", "configured");
         localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
-        if (modal) modal.classList.add("hidden");
+        hideBanner();
+        closeModal(false);
       });
     }
 
@@ -206,7 +261,8 @@
         };
         localStorage.setItem("cookiesAccepted", "all");
         localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
-        if (modal) modal.classList.add("hidden");
+        hideBanner();
+        closeModal(false);
       });
     }
 
@@ -220,15 +276,16 @@
         };
         localStorage.setItem("cookiesAccepted", "essential");
         localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
-        if (modal) modal.classList.add("hidden");
+        hideBanner();
+        closeModal(false);
       });
     }
 
-    // Fechar modal ao clicar fora
+    // Fechar modal ao clicar fora - volta para o banner simples
     if (modal) {
       modal.addEventListener("click", (e) => {
         if (e.target === modal) {
-          modal.classList.add("hidden");
+          closeModal(true);
         }
       });
     }
