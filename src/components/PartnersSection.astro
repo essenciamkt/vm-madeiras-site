@@ -6,6 +6,8 @@ import {
     Puzzle,
     Calculator,
     ChevronRight,
+    Instagram,
+    Globe,
 } from "lucide-astro";
 
 export interface Props {
@@ -13,6 +15,32 @@ export interface Props {
 }
 
 const { id = "parceiros" } = Astro.props;
+
+// Função para formatar o telefone
+const formatPhoneNumber = (phoneNumber: string) => {
+    // Remove todos os caracteres não numéricos
+    const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+
+    // Verifica se tem DDD (10 ou 11 dígitos)
+    const match = cleaned.match(/^(\d{2})?(\d{4,5})(\d{4})$/);
+
+    if (match) {
+        const ddd = match[1] ? `(${match[1]}) ` : '';
+        return `${ddd}${match[2]}-${match[3]}`;
+    }
+    return phoneNumber; // Retorna o original se não conseguir formatar
+};
+
+// Função para criar link de telefone
+const createPhoneLink = (phoneNumber: string) => {
+    const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+    return `tel:+55${cleaned}`;
+};
+
+// Função para criar link de email
+const createEmailLink = (email: string) => {
+    return `mailto:${email}`;
+};
 
 const arquitetos = [
     {
@@ -27,13 +55,37 @@ const arquitetos = [
     },
     {
         nome: "Angelita Portela",
-        telefone: "2742-1630",
-        email: "angelita@rav3arquitetura.com.br",
+        telefone: "21 996242230",
+        contato: "@angelitaportela",
     },
+    {
+        nome: "Arqê - ARQUITETURA E GESTAO",
+        telefone: "21999019393",
+        contato: "arqe.com.br/arqe",
+    },
+    { nome: "Bianca Socci", telefone: "21 971047303" },
+    { nome: "Bruno Tavares", telefone: "21 968338946" },
+    { nome: "Camila Freitas (CAZA ARQDESIGN)", telefone: "21 97595 4036" },
     {
         nome: "Eduardo Pires Ferreira",
         telefone: "2644-6168",
         email: "eduardo72@mac.com",
+    },
+    {
+        nome: "Helena Schmidt",
+        telefone: "21 985650321",
+        contato: "@helenashmidt.arq",
+    },
+    { nome: "Jose Antonio", telefone: "21 999019393" },
+    {
+        nome: "Lethicia Sobral",
+        telefone: "21 984762810",
+        contato: "@lethiciasobralarquitetura",
+    },
+    {
+        nome: "Luiza Bedran",
+        telefone: "21 985770195",
+        contato: "@luizabedran.arq",
     },
     {
         nome: "Marco Lobo",
@@ -45,17 +97,19 @@ const arquitetos = [
         telefone: "3641-0058",
         email: "octavioprado@terra.com.br",
     },
-    {
-        nome: "Ricardo Wagner",
-        telefone: "99309-7722",
-        email: "ricardowagnerarquiteto@gmail.com",
-    },
+    { nome: "Renata Valido", telefone: "21 988589555" },
     {
         nome: "Roberto Carregal",
         telefone: "2743-6613",
         email: "roberto@rav3arquitetura.com.br",
     },
-];
+    { nome: "Roberto Carvalho", telefone: "21 998096607" },
+    {
+        nome: "OTAVIO P NUNES",
+        telefone: "21 994615302",
+        contato: "@opnarquitetura",
+    },
+].sort((a, b) => a.nome.localeCompare(b.nome, "pt", { sensitivity: "base" }));
 
 const carpinteiros = [
     { nome: "Antônio Carlos Botelho (Carpintaria)", telefone: "98888-3834" },
@@ -65,13 +119,25 @@ const carpinteiros = [
         telefone: "2642-8653 / 97470-8111",
     },
     { nome: "Elias Rufino", telefone: "2644-5130 / 99867-4460" },
-    { nome: "José Carlos Carreiro (Neco)", telefone: "2641-8291 / 99415-1931" },
-    { nome: "Mauricio Antunes", telefone: "99154-2341" },
-    {
-        nome: "Mozair Felicio (Carpintaria e Marcenaria)",
-        telefone: "3642-4965 / 99925-5235",
-    },
-];
+    { nome: "Ari Carpinteiro", telefone: "21 991826631" },
+    { nome: "Felippe Carpinteiro", telefone: "21 976870551" },
+    { nome: "Felicio Jordane", telefone: "21 996045978" },
+    { nome: "Jair Reis", telefone: "21 997851856" },
+    { nome: "Paulo Fubá", telefone: "21 976619240" },
+    { nome: "Deir Carpinteiro", telefone: "21 970293615" },
+    { nome: "Joao Carvalho", telefone: "21 975000257" },
+    { nome: "Jesue Carpinteiro", telefone: "21 983867199" },
+    { nome: "Miqueias Cunha", telefone: "21 972147753" },
+    { nome: "Delcy Ribeiro", telefone: "998051336" },
+    { nome: "Jhonson & Joao", telefone: "21 999759375" },
+    { nome: "Carlos (Betinho)", telefone: "21 976027128" },
+    { nome: "Oswaldo Tito", telefone: "21 976444894" },
+    { nome: "Carlos Machado", telefone: "21 972404972" },
+    { nome: "Misael", telefone: "21 988698849" },
+    { nome: "Arnaldo Carneiro", telefone: "21 998757864" },
+    { nome: "Mauricio Antunes", telefone: "21 991542341" },
+    { nome: "Paulo Suarez", telefone: "21 995872388" },
+].sort((a, b) => a.nome.localeCompare(b.nome, "pt", { sensitivity: "base" }));
 
 const construtores = [
     {
@@ -79,33 +145,23 @@ const construtores = [
         telefone: "2642-3566 / 99252-4552",
         contato: "alexwarol@hotmail.com",
     },
-    { nome: "Braespa", telefone: "2642-7010", contato: "braespa@uol.com.br" },
     {
         nome: "Cial Construtora",
         telefone: "2643-3406",
         contato: "cial@cialconstrutora.com",
     },
-    {
-        nome: "Empreiteira Maia (Elias Maia)",
-        telefone: "2743-9599",
-        contato: "empreiteiramaia@terra.com.br",
-    },
-    {
-        nome: "Jair Garcia",
-        telefone: "99450-8274",
-        contato: "garcia.jair@hotmail.com",
-    },
-    {
-        nome: "Luiz Alberto Roditi",
-        telefone: "99187-8741",
-        contato: "laroditi@yahoo.com.br",
-    },
-    {
-        nome: "Três Moraes Construções",
-        telefone: "2742-3954",
-        contato: "tresmoraes@uol.com.br",
-    },
-];
+    { nome: "Três Moraes Construções", telefone: "2742-3954", contato: "tresmoraes@uol.com.br" },
+    { nome: "Luiz Alberto Roditi", telefone: "99187-8741", contato: "laroditi@yahoo.com.br" },
+    { nome: "Construtora Saint Michel", telefone: "21 986690535" },
+    { nome: "Cassio Mattos", telefone: "21 964711404" },
+    { nome: "Jackson Cruz", telefone: "21 976146858" },
+    { nome: "Verdan Reformas", telefone: "21 986241158" },
+    { nome: "Geremias Maia", telefone: "21 991284114" },
+    { nome: "Corazin Construtora", telefone: "21 968762551" },
+    { nome: "Rio Serra 165", telefone: "21 996794734" },
+    { nome: "Jorge Pacheco", telefone: "21 971934081" },
+    { nome: "Bruno Raposo (BM Raposo)", telefone: "21 974201331" },
+].sort((a, b) => a.nome.localeCompare(b.nome, "pt", { sensitivity: "base" }));
 
 const engenheiros = [
     {
@@ -118,7 +174,7 @@ const engenheiros = [
         telefone: "2642-3045",
         email: "rrdecarvalhoarquitetura@hotmail.com",
     },
-];
+].sort((a, b) => a.nome.localeCompare(b.nome, "pt", { sensitivity: "base" }));
 ---
 
 <section id={id} class="py-24 bg-white relative">
@@ -209,15 +265,41 @@ const engenheiros = [
                                                 class="w-4 h-4 mr-2"
                                                 color="#7D2B2D"
                                             />
-                                            {arquiteto.telefone}
+                                            <a href={createPhoneLink(arquiteto.telefone)}>{formatPhoneNumber(arquiteto.telefone)}</a>
                                         </div>
-                                        <div class="flex items-center">
-                                            <Mail
-                                                class="w-4 h-4 mr-2"
-                                                color="#7D2B2D"
-                                            />
-                                            {arquiteto.email}
-                                        </div>
+                                        {arquiteto.email && (
+                                            <div class="flex items-center">
+                                                <Mail
+                                                    class="w-4 h-4 mr-2"
+                                                    color="#7D2B2D"
+                                                />
+                                                <a href={createEmailLink(arquiteto.email)}>{arquiteto.email}</a>
+                                            </div>
+                                        )}
+                                        {arquiteto.contato && (
+                                            <div class="flex items-center">
+                                                {arquiteto.contato.startsWith('@') ? (
+                                                    <Instagram
+                                                        class="w-4 h-4 mr-2"
+                                                        color="#7D2B2D"
+                                                    />
+                                                ) : (
+                                                    <Globe
+                                                        class="w-4 h-4 mr-2"
+                                                        color="#7D2B2D"
+                                                    />
+                                                )}
+                                                {arquiteto.contato.startsWith('@') ? (
+                                                    <a href={`https://instagram.com/${arquiteto.contato.substring(1)}`} target="_blank" rel="noopener noreferrer">
+                                                        {arquiteto.contato}
+                                                    </a>
+                                                ) : (
+                                                    <a href={`https://${arquiteto.contato}`} target="_blank" rel="noopener noreferrer">
+                                                        {arquiteto.contato}
+                                                    </a>
+                                                )}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             ))
@@ -252,10 +334,10 @@ const engenheiros = [
                                     </h4>
                                     <div class="flex items-center text-sm text-gray-600">
                                         <Phone
-                                            class="w-4 h-4 mr-2"
-                                            color="#7D2B2D"
-                                        />
-                                        {carpinteiro.telefone}
+                                                class="w-4 h-4 mr-2"
+                                                color="#7D2B2D"
+                                            />
+                                        <a href={createPhoneLink(carpinteiro.telefone)}>{formatPhoneNumber(carpinteiro.telefone)}</a>
                                     </div>
                                 </div>
                             ))
@@ -294,15 +376,30 @@ const engenheiros = [
                                                 class="w-4 h-4 mr-2"
                                                 color="#7D2B2D"
                                             />
-                                            {construtor.telefone}
+                                            <a href={createPhoneLink(construtor.telefone)}>{formatPhoneNumber(construtor.telefone)}</a>
                                         </div>
                                         {construtor.contato && (
                                             <div class="flex items-center">
-                                                <Mail
-                                                    class="w-4 h-4 mr-2"
-                                                    color="#7D2B2D"
-                                                />
-                                                {construtor.contato}
+                                                {construtor.contato.startsWith('@') ? (
+                                                    <Instagram
+                                                        class="w-4 h-4 mr-2"
+                                                        color="#7D2B2D"
+                                                    />
+                                                ) : (
+                                                    <Globe
+                                                        class="w-4 h-4 mr-2"
+                                                        color="#7D2B2D"
+                                                    />
+                                                )}
+                                                {construtor.contato.startsWith('@') ? (
+                                                    <a href={`https://instagram.com/${construtor.contato.substring(1)}`} target="_blank" rel="noopener noreferrer">
+                                                        {construtor.contato}
+                                                    </a>
+                                                ) : (
+                                                    <a href={`https://${construtor.contato}`} target="_blank" rel="noopener noreferrer">
+                                                        {construtor.contato}
+                                                    </a>
+                                                )}
                                             </div>
                                         )}
                                     </div>
@@ -343,14 +440,14 @@ const engenheiros = [
                                                 class="w-4 h-4 mr-2"
                                                 color="#7D2B2D"
                                             />
-                                            {engenheiro.telefone}
+                                            <a href={createPhoneLink(engenheiro.telefone)}>{formatPhoneNumber(engenheiro.telefone)}</a>
                                         </div>
                                         <div class="flex items-center">
                                             <Mail
                                                 class="w-4 h-4 mr-2"
                                                 color="#7D2B2D"
                                             />
-                                            {engenheiro.email}
+                                            <a href={createEmailLink(engenheiro.email)}>{engenheiro.email}</a>
                                         </div>
                                     </div>
                                 </div>

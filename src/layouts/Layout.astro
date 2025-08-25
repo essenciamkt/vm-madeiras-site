@@ -13,6 +13,8 @@ const {
 	description = "VM Madeiras & Cia: 50 anos fornecendo madeiras de qualidade em Teresópolis. Esquadrias, madeira para telhado, decks, assoalhos, madeiras nobres e ferragens. Licença IBAMA e entrega com frota própria.",
 	keywords = "madeira teresópolis, esquadrias, madeira telhado, decks, assoalhos, madeiras nobres, ferragens, compensados, IBAMA, DOF, construção civil, marcenaria",
 } = Astro.props;
+
+const isLocal = import.meta.env.DEV;
 ---
 
 <!doctype html>
@@ -24,7 +26,8 @@ const {
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- SEO Meta Tags -->
-		<title>{title}</title>
+		<title>{isLocal ? `Local - ${title}` : title}</title>
+
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords} />
 		<meta name="author" content="VM Madeiras & Cia" />
@@ -53,7 +56,7 @@ const {
 		/>
 
 		<!-- Structured Data -->
-<script is:inline type="application/ld+json">
+		<script is:inline type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@type": "LocalBusiness",
@@ -84,7 +87,7 @@ const {
 		/>
 
 		<!-- Force navbar visibility script -->
-<script is:inline>
+		<script is:inline>
 			// Critical navbar fix - run immediately
 			function forceNavbarVisibility() {
 				const nav =
