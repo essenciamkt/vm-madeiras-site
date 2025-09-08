@@ -8,7 +8,7 @@ export const produtos = [
 			"Portas de madeira de alta qualidade para residências e estabelecimentos comerciais.",
 		detailedDescription:
 			"Nossa linha de portas de madeira oferece soluções completas para residências e estabelecimentos comerciais. Trabalhamos com madeiras selecionadas e tratadas, garantindo durabilidade e beleza para seu projeto. Oferecemos diversos modelos, tamanhos e acabamentos para atender às suas necessidades específicas.",
-		image: "https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=solid%20mahogany%20front%20door%20brass%20hardware%20elegant%20entrance&image_size=landscape_4_3",
+		image: "/img/linhas/portas/variacao-cmfb7ju160003jj1m2qlgckhi-1.png",
 		images: [
 			"/img/linhas/portas/Gemini_Generated_Image_63o64b63o64b63o6.png",
 			"/img/linhas/portas/Gemini_Generated_Image_h7ckrfh7ckrfh7ck.png",
@@ -29,7 +29,7 @@ export const produtos = [
 			"Madeiras para telhado de qualidade e de fornecedores selecionados e certificados.",
 		detailedDescription:
 			"Oferecemos madeiras estruturais de primeira qualidade para construção de telhados e coberturas. Nossos produtos são certificados pelo IBAMA e passam por rigoroso controle de qualidade. Trabalhamos com vigas, caibros, ripas e demais peças estruturais necessárias para seu projeto.",
-		image: "https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=exposed%20wooden%20ceiling%20beams%20cathedral%20style%20rustic%20architecture&image_size=landscape_4_3",
+		image: "/img/linhas/madeira-telhados/Gemini_Generated_Image_v15d64v15d64v15d.png",
 		images: [
 			"/img/linhas/madeira-telhados/Gemini_Generated_Image_v15d64v15d64v15d.png",
 		],
@@ -48,7 +48,7 @@ export const produtos = [
 			"Pisos em madeiras nobres variadas para ambientes internos e externos.",
 		detailedDescription:
 			"Nossa linha de decks e assoalhos oferece beleza natural e durabilidade para seus ambientes. Trabalhamos com madeiras nobres e tratadas, ideais tanto para áreas internas quanto externas. Oferecemos orientação técnica completa para instalação e manutenção.",
-		image: "https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=teak%20wood%20deck%20outdoor%20furniture%20sunset%20lighting%20luxury%20patio&image_size=landscape_4_3",
+		image: "/img/linhas/decks-assoalhos/Gemini_Generated_Image_7m103q7m103q7m10.png",
 		images: [
 			"/img/linhas/decks-assoalhos/Gemini_Generated_Image_7m103q7m103q7m10.png",
 			"/img/linhas/decks-assoalhos/Gemini_Generated_Image_ay6jynay6jynay6j.png",
@@ -70,7 +70,7 @@ export const produtos = [
 			"Forros de madeira para acabamentos internos com alta qualidade e durabilidade.",
 		detailedDescription:
 			"Nossos lambris e forros de madeira proporcionam acabamentos sofisticados e aconchegantes para ambientes internos. Oferecemos diferentes tipos de madeira, perfis e acabamentos para criar o ambiente perfeito para seu projeto.",
-		image: "https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=tongue%20groove%20pine%20ceiling%20cabin%20style%20warm%20lighting&image_size=landscape_4_3",
+		image: "/img/linhas/lambri(forro)/Gemini_Generated_Image_6t4u3k6t4u3k6t4u.png",
 		images: [
 			"/img/linhas/lambri(forro)/Gemini_Generated_Image_6t4u3k6t4u3k6t4u.png",
 			"/img/linhas/lambri(forro)/Gemini_Generated_Image_m82rnm82rnm82rnm.png",
@@ -90,7 +90,7 @@ export const produtos = [
 			"Madeiras nobres selecionadas para projetos especiais e marcenaria fina.",
 		detailedDescription:
 			"Nossa seleção de madeiras nobres atende aos projetos mais exigentes de marcenaria e construção. Trabalhamos com espécies certificadas e de alta qualidade, ideais para móveis, esquadrias especiais e acabamentos diferenciados.",
-		image: "https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=walnut%20wood%20slabs%20live%20edge%20natural%20grain%20luxury%20lumber&image_size=landscape_4_3",
+		image: "/img/linhas/madeiras-nobres/IMG_1148.jpeg",
 		images: [
 			"/img/linhas/madeiras-nobres/IMG_1148.jpeg",
 		],
@@ -130,7 +130,7 @@ export const produtos = [
 			"Dobradiças, fechaduras e puxadores de diversos acabamentos e estilos.",
 		detailedDescription:
 			"Pisos em madeiras nobres variadas para ambientes internos e externos.",
-		image: "https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=antique%20brass%20door%20handle%20lever%20style%20vintage%20hardware&image_size=landscape_4_3",
+		image: "/img/linhas/ferragens/Imagem do WhatsApp de 2025-09-05 à(s) 16.33.47_5c305566.jpg",
 		images: [
 			"/img/linhas/ferragens/Imagem do WhatsApp de 2025-09-05 à(s) 16.33.47_5c305566.jpg",
 			"/img/linhas/ferragens/Imagem do WhatsApp de 2025-09-05 à(s) 16.33.47_a53431f4.jpg",
@@ -150,12 +150,11 @@ export const produtos = [
 			"Chapas de compensado e madeirite para diversos usos na construção civil.",
 		detailedDescription:
 			"Nossa linha de compensados atende às necessidades da construção civil e marcenaria. Oferecemos diferentes espessuras e qualidades, todos com certificação ambiental e qualidade garantida.",
-		image: "https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=marine%20grade%20plywood%20stack%20waterproof%20construction%20material&image_size=landscape_4_3",
+		image: "/img/linhas/compensados/Imagem do WhatsApp de 2025-09-05 à(s) 16.43.03_35690c64.jpg",
 		images: [
 			"/img/linhas/compensados/Imagem do WhatsApp de 2025-09-05 à(s) 16.43.03_35690c64.jpg",
 			"/img/linhas/compensados/Imagem do WhatsApp de 2025-09-05 à(s) 16.43.04_139b963e.jpg",
 			"/img/linhas/compensados/Imagem do WhatsApp de 2025-09-05 à(s) 16.43.05_0e084032.jpg",
-			// "/img/linhas/compensados/Imagem do WhatsApp de 2025-09-05 à(s) 16.43.05_b6aeb859.jpg",
 		],
 		features: [
 			"Diferentes espessuras",
