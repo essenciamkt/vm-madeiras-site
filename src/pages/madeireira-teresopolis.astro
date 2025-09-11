@@ -1,0 +1,271 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { MapPin, Phone, Clock, CheckCircle, Star, TreePine, Truck, Award } from "lucide-astro";
+
+const breadcrumbItems = [
+  { name: "Início", url: "/" },
+  { name: "Madeireira em Teresópolis", url: "/madeireira-teresopolis" }
+];
+---
+
+<Layout
+  title="Madeireira em Teresópolis - VM Madeiras & Cia | 50 Anos de Tradição"
+  description="A melhor madeireira em Teresópolis há 50 anos. Especialistas em porta de madeira em Teresópolis e madeira para telhado em Teresópolis. Certificação IBAMA, qualidade garantida e entrega com frota própria."
+  keywords="madeireira em teresópolis, porta de madeira em teresópolis, madeira para telhado em teresópolis, madeiras teresópolis, construção civil teresópolis, esquadrias teresópolis, IBAMA teresópolis"
+  canonical="https://vm-madeiras.com.br/madeireira-teresopolis"
+>
+  <Navigation />
+  <Breadcrumbs items={breadcrumbItems} />
+  
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="py-16 bg-gradient-to-br from-primary-50 to-primary-100 relative overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-200/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary-200/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="inline-block px-4 py-2 bg-white text-primary-700 text-sm font-semibold rounded-full mb-4">
+            Tradição e Qualidade
+          </span>
+          <h1 class="text-4xl md:text-6xl font-bold text-gradient-primary mb-6">
+            Madeireira em <span class="text-primary-600">Teresópolis</span>
+          </h1>
+          <div class="w-16 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            Há 50 anos sendo a <strong>madeireira em Teresópolis</strong> de referência. Especialistas em 
+            <strong>porta de madeira em Teresópolis</strong> e <strong>madeira para telhado em Teresópolis</strong>. 
+            Certificação IBAMA, qualidade garantida e tradição familiar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por que escolher nossa madeireira -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-6">
+            Por que Escolher Nossa <span class="text-primary-600">Madeireira</span>?
+          </h2>
+          <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+            Como a principal madeireira em Teresópolis, oferecemos qualidade, tradição e confiança há cinco décadas.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Award class="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">50 Anos de Tradição</h3>
+            <p class="text-gray-700">
+              Desde 1974, nossa madeireira em Teresópolis atende com qualidade e confiança, 
+              construindo uma reputação sólida na região serrana.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <TreePine class="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Certificação IBAMA</h3>
+            <p class="text-gray-700">
+              Todas as madeiras são certificadas pelo IBAMA, garantindo origem sustentável 
+              e qualidade ambiental em todos os nossos produtos.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Truck class="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Entrega com Frota Própria</h3>
+            <p class="text-gray-700">
+              Entregamos em Teresópolis e região com nossa frota própria, 
+              garantindo segurança e pontualidade na entrega dos seus materiais.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nossos Produtos Principais -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-6">
+            Nossos <span class="text-primary-600">Produtos</span> Principais
+          </h2>
+          <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+            Especialistas em porta de madeira e madeira para telhado em Teresópolis, 
+            oferecemos uma linha completa para construção civil e marcenaria.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Porta de Madeira -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                <CheckCircle class="w-6 h-6 text-primary-600" />
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900">Porta de Madeira em Teresópolis</h3>
+            </div>
+            <p class="text-gray-700 mb-6">
+              Nossa linha de <strong>porta de madeira em Teresópolis</strong> oferece soluções completas 
+              para residências e estabelecimentos comerciais. Trabalhamos com madeiras selecionadas, 
+              diversos modelos e acabamentos personalizados.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-700">
+                <CheckCircle class="w-5 h-5 text-primary-600 mr-3" />
+                Madeiras selecionadas e tratadas
+              </li>
+              <li class="flex items-center text-gray-700">
+                <CheckCircle class="w-5 h-5 text-primary-600 mr-3" />
+                Diversos modelos e tamanhos
+              </li>
+              <li class="flex items-center text-gray-700">
+                <CheckCircle class="w-5 h-5 text-primary-600 mr-3" />
+                Acabamentos personalizados
+              </li>
+              <li class="flex items-center text-gray-700">
+                <CheckCircle class="w-5 h-5 text-primary-600 mr-3" />
+                Instalação profissional disponível
+              </li>
+            </ul>
+          </div>
+
+          <!-- Madeira para Telhado -->
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                <CheckCircle class="w-6 h-6 text-primary-600" />
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900">Madeira para Telhado em Teresópolis</h3>
+            </div>
+            <p class="text-gray-700 mb-6">
+              Oferecemos <strong>madeira para telhado em Teresópolis</strong> com qualidade estrutural 
+              de primeira linha. Produtos certificados IBAMA para construção de telhados e coberturas 
+              com segurança e durabilidade.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-700">
+                <CheckCircle class="w-5 h-5 text-primary-600 mr-3" />
+                Certificação IBAMA
+              </li>
+              <li class="flex items-center text-gray-700">
+                <CheckCircle class="w-5 h-5 text-primary-600 mr-3" />
+                Madeiras tratadas contra pragas
+              </li>
+              <li class="flex items-center text-gray-700">
+                <CheckCircle class="w-5 h-5 text-primary-600 mr-3" />
+                Diversos tamanhos disponíveis
+              </li>
+              <li class="flex items-center text-gray-700">
+                <CheckCircle class="w-5 h-5 text-primary-600 mr-3" />
+                Entrega com frota própria
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nossa História -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-bold text-gradient-primary mb-6">
+              Nossa <span class="text-primary-600">História</span>
+            </h2>
+            <div class="space-y-6 text-gray-700">
+              <p class="text-lg leading-relaxed">
+                Nossa história como <strong>madeireira em Teresópolis</strong> se inicia há aproximadamente 70 anos, 
+                quando um jovem imigrante português visitou Teresópolis e decidiu se estabelecer na cidade.
+              </p>
+              <p class="text-lg leading-relaxed">
+                Por volta de 1975, iniciamos nossa trajetória no ramo madeireiro, tornando-nos uma das 
+                principais referências em <strong>porta de madeira em Teresópolis</strong> e 
+                <strong>madeira para telhado em Teresópolis</strong>.
+              </p>
+              <p class="text-lg leading-relaxed">
+                Hoje, com 50 anos de tradição, continuamos sendo uma empresa familiar, mantendo os valores 
+                de honestidade, qualidade e respeito ao cliente que nos trouxeram até aqui.
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Informações da Empresa</h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <MapPin class="w-5 h-5 text-primary-600 mr-3" />
+                <span class="text-gray-700">Av. Alberto Torres, 500 - Teresópolis, RJ</span>
+              </div>
+              <div class="flex items-center">
+                <Phone class="w-5 h-5 text-primary-600 mr-3" />
+                <span class="text-gray-700">(21) 2642-4060</span>
+              </div>
+              <div class="flex items-center">
+                <Clock class="w-5 h-5 text-primary-600 mr-3" />
+                <span class="text-gray-700">Segunda a Sexta: 8h às 18h | Sábado: 8h às 12h</span>
+              </div>
+              <div class="flex items-center">
+                <Star class="w-5 h-5 text-primary-600 mr-3" />
+                <span class="text-gray-700">50 anos de tradição em Teresópolis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-primary-600 to-primary-700 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Precisa de Madeiras de Qualidade?
+        </h2>
+        <p class="text-xl mb-8 max-w-3xl mx-auto">
+          Entre em contato com a melhor madeireira em Teresópolis. 
+          Especialistas em porta de madeira e madeira para telhado com 50 anos de tradição.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="tel:2126424060" 
+            class="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
+          >
+            <Phone class="w-5 h-5 mr-2" />
+            (21) 2642-4060
+          </a>
+          <a 
+            href="#contato" 
+            class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-600 transition-colors duration-300"
+          >
+            <MapPin class="w-5 h-5 mr-2" />
+            Visite Nossa Loja
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>

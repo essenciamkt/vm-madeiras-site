@@ -2,7 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { MessageCircle, ArrowRight } from "lucide-astro";
+
+const breadcrumbItems = [
+  { name: "Início", url: "/" },
+  { name: "Produtos", url: "/produtos" }
+];
 
 // Product data - in a real app, this would come from a CMS or database
 const produtos = [
@@ -75,13 +81,14 @@ const produtos = [
 // Get unique categories
 const categories = [...new Set(produtos.map(p => p.category))];
 
-const title = "Produtos - VM Madeiras & Cia";
-const description = "Conheça nossa linha completa de produtos para construção civil e marcenaria. Madeiras de qualidade com certificação IBAMA.";
-const keywords = "produtos madeira, esquadrias, telhado, decks, assoalhos, ferragens, compensados, teresópolis";
+const title = "Produtos - Madeireira em Teresópolis | Porta de Madeira e Madeira para Telhado - VM Madeiras";
+const description = "Produtos da melhor madeireira em Teresópolis: porta de madeira em Teresópolis, madeira para telhado em Teresópolis, esquadrias, decks, assoalhos e madeiras nobres. Certificação IBAMA.";
+const keywords = "produtos madeireira teresópolis, porta de madeira em teresópolis, madeira para telhado em teresópolis, esquadrias teresópolis, decks teresópolis, assoalhos teresópolis, madeiras nobres teresópolis, ferragens, compensados";
 ---
 
-<Layout title={title} description={description} keywords={keywords}>
+<Layout title={title} description={description} keywords={keywords} canonical="https://vm-madeiras.com.br/produtos">
   <Navigation />
+  <Breadcrumbs items={breadcrumbItems} />
   
   <main class="pt-20">
     <!-- Hero Section -->
@@ -139,7 +146,7 @@ const keywords = "produtos madeira, esquadrias, telhado, decks, assoalhos, ferra
                 <div class="aspect-video overflow-hidden rounded-t-2xl">
                   <img
                     src={produto.image}
-                    alt={produto.title}
+                    alt={`${produto.title} em Teresópolis - Madeireira VM Madeiras & Cia com certificação IBAMA e 50 anos de tradição`}
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />

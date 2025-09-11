@@ -5,9 +5,9 @@ export const produtos = [
 		title: "Portas de Madeira",
 		shortTitle: "Portas",
 		description:
-			"Portas de madeira de alta qualidade para residências e estabelecimentos comerciais.",
+			"Porta de madeira em Teresópolis de alta qualidade para residências e estabelecimentos comerciais. Madeireira especializada há 50 anos.",
 		detailedDescription:
-			"Nossa linha de portas de madeira oferece soluções completas para residências e estabelecimentos comerciais. Trabalhamos com madeiras selecionadas e tratadas, garantindo durabilidade e beleza para seu projeto. Oferecemos diversos modelos, tamanhos e acabamentos para atender às suas necessidades específicas.",
+			"Nossa linha de porta de madeira em Teresópolis oferece soluções completas para residências e estabelecimentos comerciais. Como madeireira em Teresópolis há 50 anos, trabalhamos com madeiras selecionadas e tratadas, garantindo durabilidade e beleza para seu projeto. Oferecemos diversos modelos, tamanhos e acabamentos para atender às suas necessidades específicas em Teresópolis e região.",
 		image: "/img/linhas/portas/variacao-cmfb7ju160003jj1m2qlgckhi-1.png",
 		images: [
 			"/img/linhas/portas/Gemini_Generated_Image_63o64b63o64b63o6.png",
@@ -23,12 +23,12 @@ export const produtos = [
 	},
 	{
 		id: "madeira-telhado",
-		title: "Madeira - Telhado",
+		title: "Madeira para Telhado",
 		shortTitle: "Madeira - Telhado",
 		description:
-			"Madeiras para telhado de qualidade e de fornecedores selecionados e certificados.",
+			"Madeira para telhado em Teresópolis de qualidade superior. Madeireira certificada IBAMA com fornecedores selecionados.",
 		detailedDescription:
-			"Oferecemos madeiras estruturais de primeira qualidade para construção de telhados e coberturas. Nossos produtos são certificados pelo IBAMA e passam por rigoroso controle de qualidade. Trabalhamos com vigas, caibros, ripas e demais peças estruturais necessárias para seu projeto.",
+			"Oferecemos madeira para telhado em Teresópolis com qualidade estrutural de primeira linha para construção de telhados e coberturas. Como madeireira em Teresópolis estabelecida há décadas, nossos produtos são certificados pelo IBAMA e passam por rigoroso controle de qualidade. Trabalhamos com vigas, caibros, ripas e demais peças estruturais necessárias para seu projeto em Teresópolis e região serrana.",
 		image: "/img/linhas/madeira-telhados/Gemini_Generated_Image_v15d64v15d64v15d.png",
 		images: [
 			"/img/linhas/madeira-telhados/Gemini_Generated_Image_v15d64v15d64v15d.png",

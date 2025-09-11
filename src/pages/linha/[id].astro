@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import {
     ArrowRight,
     MessageCircle,
@@ -25,13 +26,22 @@ if (!produto) {
 
 const whatsappNumber = "5521264240600";
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre:%20${encodeURIComponent(produto.title)}`;
+
+const breadcrumbItems = [
+  { name: "Início", url: "/" },
+  { name: "Produtos", url: "/produtos" },
+  { name: produto.title, url: `/linha/${produto.id}` }
+];
 ---
 
 <Layout
-    title={produto.title + " - VM Madeiras & Cia"}
-    description={produto.description}
+    title={`${produto.title} em Teresópolis - Madeireira VM Madeiras & Cia`}
+    description={`${produto.description} Madeireira em Teresópolis com 50 anos de tradição. Certificação IBAMA e entrega com frota própria.`}
+    keywords={`${produto.title.toLowerCase()} em teresópolis, madeireira teresópolis, ${produto.title.toLowerCase()}, construção civil teresópolis, marcenaria teresópolis`}
+    canonical={`https://vm-madeiras.com.br/linha/${produto.id}`}
 >
     <Navigation />
+    <Breadcrumbs items={breadcrumbItems} />
 
     <main class="pt-20">
         <!-- Hero Section -->
@@ -98,7 +108,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=Ol%C3%A1!%20Gostaria%
                             <div class="group relative overflow-hidden rounded-2xl shadow-xl">
                                 <img
                                     src={image}
-                                    alt={`${produto.title} - Imagem ${index + 1}`}
+                                    alt={`${produto.title} em Teresópolis - Imagem ${index + 1} - Madeireira VM Madeiras & Cia com certificação IBAMA`}
                                     class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                                     loading="lazy"
                                 />

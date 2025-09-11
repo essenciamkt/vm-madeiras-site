@@ -6,13 +6,18 @@ export interface Props {
 	title?: string;
 	description?: string;
 	keywords?: string;
+	canonical?: string;
 }
 
 const {
-	title = "VM Madeiras & Cia - Madeiras de Qualidade em Teresópolis | 50 Anos de Tradição",
-	description = "VM Madeiras & Cia: 50 anos fornecendo madeiras de qualidade em Teresópolis. Esquadrias, madeira para telhado, decks, assoalhos, madeiras nobres e ferragens. Licença IBAMA e entrega com frota própria.",
-	keywords = "madeira teresópolis, esquadrias, madeira telhado, decks, assoalhos, madeiras nobres, ferragens, compensados, IBAMA, DOF, construção civil, marcenaria",
+	title = "VM Madeiras & Cia - Madeireira em Teresópolis | Porta de Madeira e Madeira para Telhado | 50 Anos de Tradição",
+	description = "Madeireira em Teresópolis há 50 anos. Especialistas em porta de madeira em Teresópolis e madeira para telhado em Teresópolis. Esquadrias, decks, assoalhos e madeiras nobres. Licença IBAMA e entrega com frota própria.",
+	keywords = "madeireira em teresópolis, porta de madeira em teresópolis, madeira para telhado em teresópolis, madeira teresópolis, esquadrias teresópolis, madeiras nobres teresópolis, construção civil teresópolis, marcenaria teresópolis, IBAMA, DOF",
+	canonical,
 } = Astro.props;
+
+// Gerar URL canônica baseada na URL atual
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
 
 const isLocal = import.meta.env.DEV;
 ---
@@ -33,10 +38,21 @@ const isLocal = import.meta.env.DEV;
 		<meta name="author" content="VM Madeiras & Cia" />
 		<meta name="robots" content="index, follow" />
 
+		<!-- Geo Meta Tags -->
+		<meta name="geo.region" content="BR-RJ" />
+		<meta name="geo.placename" content="Teresópolis" />
+		<meta name="geo.position" content="-22.4144;-42.9664" />
+		<meta name="ICBM" content="-22.4144, -42.9664" />
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
+		<meta property="og:locale" content="pt_BR" />
+		<meta property="og:site_name" content="VM Madeiras & Cia" />
 		<meta property="og:locale" content="pt_BR" />
 
 		<!-- Twitter -->
@@ -60,19 +76,58 @@ const isLocal = import.meta.env.DEV;
 			{
 				"@context": "https://schema.org",
 				"@type": "LocalBusiness",
+				"@id": "https://vm-madeiras.com",
 				"name": "VM Madeiras & Cia",
-				"description": "Venda de madeiras de extração de manejo com licença IBAMA",
+				"alternateName": "Madeireira VM Madeiras Teresópolis",
+				"description": "Madeireira em Teresópolis há 50 anos. Especialistas em porta de madeira em Teresópolis e madeira para telhado em Teresópolis. Licença IBAMA e certificação ambiental.",
+				"url": "https://vm-madeiras.com",
 				"address": {
 					"@type": "PostalAddress",
 					"streetAddress": "Av. Alberto Torres, 500",
 					"addressLocality": "Teresópolis",
 					"addressRegion": "RJ",
+					"postalCode": "25953-000",
 					"addressCountry": "BR"
 				},
-				"telephone": ["(21) 2642-4060", "21 98132-0215"],
-				"openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-12:00",
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": "-22.4144",
+					"longitude": "-42.9664"
+				},
+				"telephone": "(21) 2642-4060",
+				"openingHours": ["Mo-Fr 08:00-18:00", "Sa 08:00-12:00"],
 				"foundingDate": "1974",
-				"servedCuisine": "Madeiras, Esquadrias, Ferramentas, Construção Civil"
+				"areaServed": {
+					"@type": "City",
+					"name": "Teresópolis",
+					"containedInPlace": {
+						"@type": "State",
+						"name": "Rio de Janeiro"
+					}
+				},
+				"serviceType": ["Madeireira", "Porta de Madeira", "Madeira para Telhado", "Esquadrias", "Construção Civil"],
+				"hasOfferCatalog": {
+					"@type": "OfferCatalog",
+					"name": "Produtos VM Madeiras",
+					"itemListElement": [
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Product",
+								"name": "Porta de Madeira em Teresópolis",
+								"description": "Portas de madeira de alta qualidade para residências e estabelecimentos comerciais em Teresópolis"
+							}
+						},
+						{
+							"@type": "Offer",
+							"itemOffered": {
+								"@type": "Product",
+								"name": "Madeira para Telhado em Teresópolis",
+								"description": "Madeiras estruturais certificadas IBAMA para construção de telhados e coberturas em Teresópolis"
+							}
+						}
+					]
+				}
 			}
 		</script>
 

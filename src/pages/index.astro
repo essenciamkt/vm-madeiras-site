@@ -7,14 +7,21 @@ import ProductsSection from "../components/ProductsSection.astro";
 import PartnersSection from "../components/PartnersSection.astro";
 import ContactSection from "../components/ContactSection.astro";
 import Footer from "../components/Footer.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbItems = [
+  { name: "Início", url: "/" }
+];
 ---
 
 <Layout
-  title="VM Madeiras & Cia - Madeiras de Qualidade em Teresópolis | 50 Anos de Tradição"
-  description="VM Madeiras & Cia: 50 anos fornecendo madeiras de qualidade em Teresópolis. Esquadrias, madeira para telhado, decks, assoalhos, madeiras nobres e ferragens. Licença IBAMA e entrega com frota própria."
-  keywords="madeira teresópolis, esquadrias, madeira telhado, decks, assoalhos, madeiras nobres, ferragens, compensados, IBAMA, DOF, construção civil, marcenaria"
+  title="VM Madeiras & Cia - Madeireira em Teresópolis | Porta de Madeira e Madeira para Telhado"
+  description="Madeireira em Teresópolis há 50 anos. Especialistas em porta de madeira em Teresópolis e madeira para telhado em Teresópolis. Esquadrias, decks, assoalhos e madeiras nobres com certificação IBAMA."
+  keywords="madeireira em teresópolis, porta de madeira em teresópolis, madeira para telhado em teresópolis, esquadrias teresópolis, madeiras nobres teresópolis, construção civil teresópolis, marcenaria teresópolis"
+  canonical="https://vm-madeiras.com.br/"
 >
   <Navigation />
+  <Breadcrumbs items={breadcrumbItems} />
   <main>
     <HeroSection id="inicio" />
     <ProductsSection id="produtos" />
